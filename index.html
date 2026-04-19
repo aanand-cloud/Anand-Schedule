@@ -1,0 +1,1736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Bank Tracker">
+<meta name="application-name" content="Bank Tracker">
+<meta name="theme-color" content="#0d1f4e">
+<meta name="description" content="NHS Bank Work Tracker — hours, pay and annual leave">
+<link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAEiUlEQVR42u3dv09dBRTA8XNvsZhWqBo1gGlAEklMqnEwDrpo3IxpTRx0dNEOrhoX/ReMgzFhcTFpolMhxs3oaNfSiThAYoXGQeRFkSDiYklbpDwK99d5n88GeeFd3vvmvHMvDyiiQSOT53eCdHrL80VT912Il0yRFyImU9yFkMkUdiFkMoVdCJlMYZdipi2Oo6VSzGSKuhAymVaQUsxkmtalmMkUdSlmMkVdiplMUZdiJlPUpYeJTErTmUxTuhQzmaIuxUymqO3QpFKYzvRj7JuxA2+z+tpq7cd154/HhzxVHCXi/W7fRNx7JrTpzGEj7kfVcd86pe3QVBpzlV/3rhPadBZyHaqa1jentAkt5lT3J2gxp7rf0roh5gz3f7NhE1rMqY5D0GJOdTyCJhVBm86pjqtwQijmtjiOa9QmNKl4cxJ9e2zowXj7kVfixQeeirMnH43hYihWt9ZicfN6zP32Y3zXuxpbO383eoxWDutGX54cnohL0+/HmROn973NBz9/EXNrVxpdO0xo+vLxxFu3xTy/diU+uXE51rf/jCeGx+KNh16IzX+2rBy03+iJU/H86Zndj3/f/iM++uXL+Ou/gBc2lmJhY6kVx+qk0LpxoIn7Ho7ylrfO/7S5shtz245X0Bzo/vLkbR/3tjdae6yCJhU7NPt6eeSZmJ18b8/nXxp5OhbPze5+/ENvId5d/syEBhOa2nzfuxoz1y7Gs6em4+vpD1s5kU1oUhM0ggZB04im/oJRU8frpJB9fXr2nXj1zHN7Pn/nZbvd29+Yi89//daEhuPi7aMDwm+sgJNCEDQdeTnvwvEJWtSpjkvQpNKa69DrS3Mrno56zFy7OJ71VaPxy3ZCHtyoq1iBGgtayIMddVX7fCnmwbV4bnYlU8yNBC3mwY666istta4cYh7cFaSuS4Yu21H5tK7zVaC2CW06D9bE/r+IR6cuVH4S6v3Q9BVlP3E3dZJZ+4Q2nalrStuhSUXQCBoEDYIGQSNoEDS0Ti0/KXz89a/GPdSY0CBoBA2CBkGDoEHQCBoEDYIGQYOgETQIGgQNggZBI2gQNDSqlt8pvH75TX+skYiIGJ265I81gqARNAgaBA2CBkEjaBA0CBoEDYJG0CBoEDQIGgSNoEHQIGgQNAgaQYOgQdAgaBA0ggZBg6BB0AgaBH04o1MXxj3U1NGBCY0JbUrT1uffhMaENqVp6/NeZv7mGKyYG1s5RC3mqhQjk+d3mvym15fm/A9DIecJWthCThk0dHaHBkGDoBE0CBoEDYIGQSNoEDQIGgQNgmYAgu4tzxceBjLoLc8XJjRWDhA0CBruIWgnhmQ4ITShsXJAJ4K2dtD1dcOEJvfKYUrT5elsQpP/pNCUpqvT2YQm/4Q2penqdL7rhBY1XYv5wJVD1HQpZjs0g7FDm9J0cTr3PaFFTRdiPtTKIWraHvOhd2hR0+aY7+mkUNS0NeaIiCPF6R8O0ZaQ73lCm9a0NeYjBy1q2hTzkVcOKwhtCbmSoIVN06/ula4LwqbuNbW2/VfcIq7jfho9oRO5eI/bvxsrlw6xEnTsAAAAAElFTkSuQmCC">
+<link rel="manifest" id="pwa-manifest">
+<title>Anand's Planner</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f4ef;--surface:#fff;--surface2:#f0ede7;--border:rgba(0,0,0,0.09);--border2:rgba(0,0,0,0.15);--text:#1a1815;--text2:#6b6760;--text3:#a09d98;--accent:#c4521a;--bank:#1a4fa8;--bank-bg:#edf2ff;--bank-light:#dce8ff;--wa:#25d366;--radius:14px;--radius-sm:8px}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;background:var(--bg);font-family:'DM Sans',sans-serif;color:var(--text)}
+.app{max-width:480px;margin:0 auto;min-height:100vh;display:flex;flex-direction:column}
+.header{padding:2.5rem 1.5rem 0.8rem}
+.header-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:.15rem}
+.app-title{font-family:'DM Serif Display',serif;font-size:1.9rem;line-height:1}
+.app-title span{color:var(--accent)}
+.avatar{width:38px;height:38px;border-radius:50%;background:var(--text);color:#fff;font-family:'DM Serif Display',serif;font-size:1.1rem;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.header-sub{font-size:13px;color:var(--text3);margin-top:.3rem}
+.date-chip{font-size:12px;color:var(--text2);background:var(--surface2);border-radius:20px;padding:3px 10px;display:inline-block;margin-top:.3rem}
+.nav{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;padding:.7rem 1.5rem .8rem}
+.nav-btn{padding:8px 4px;border-radius:var(--radius-sm);border:1.5px solid var(--border2);background:var(--surface);font-family:'DM Sans',sans-serif;font-size:11px;font-weight:500;color:var(--text2);cursor:pointer;white-space:nowrap;transition:all .2s;text-align:center;line-height:1.3}
+.nav-btn.active{background:var(--text);color:#fff;border-color:var(--text)}
+.nav-btn.bnav.active{background:var(--bank);border-color:var(--bank);color:#fff}
+#nav-al.active{background:#1a7a45;border-color:#1a7a45;color:#fff}
+
+.content{flex:1;padding:0 1.5rem 5rem}
+.pane{display:none}.pane.active{display:block}
+.add-form{background:var(--surface);border-radius:var(--radius);border:1px solid var(--border);padding:1rem;margin-bottom:1.1rem;display:flex;flex-direction:column;gap:9px}
+.form-row{display:flex;gap:8px}
+input,select{font-family:'DM Sans',sans-serif}
+.add-form input,.add-form select,.bform input,.bform select{width:100%;padding:9px 12px;border-radius:var(--radius-sm);border:1.5px solid var(--border);background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:14px;outline:none;transition:border-color .15s}
+.add-form input:focus,.add-form select:focus{border-color:var(--accent)}
+.add-form input::placeholder,.bform input::placeholder{color:var(--text3)}
+.abtn{padding:9px 16px;border-radius:var(--radius-sm);border:none;background:var(--text);color:#fff;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;cursor:pointer;white-space:nowrap}
+.abtn:active{opacity:.75}
+.abtn.bk{background:var(--bank)}
+.filters{display:flex;gap:6px;margin-bottom:1rem;overflow-x:auto;padding-bottom:2px;scrollbar-width:none}
+.filters::-webkit-scrollbar{display:none}
+.fpill{padding:5px 13px;border-radius:50px;border:1.5px solid var(--border2);background:transparent;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;color:var(--text2);cursor:pointer;white-space:nowrap}
+.fpill.active{background:var(--surface2);border-color:var(--border2);color:var(--text)}
+.glbl{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--text);margin:1rem 0 .5rem;padding-bottom:5px;border-bottom:1.5px solid var(--border2)}
+.tcard{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:12px 13px;display:flex;align-items:flex-start;gap:11px;margin-bottom:7px}
+.tcard.done{opacity:.45}
+.cbox{width:20px;height:20px;border-radius:50%;border:2px solid var(--border2);cursor:pointer;flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.cbox.chk{background:var(--accent);border-color:var(--accent)}
+.cbox.chk::after{content:'';display:block;width:6px;height:10px;border:2px solid #fff;border-top:none;border-left:none;transform:rotate(45deg) translateY(-1px)}
+.tbody{flex:1;min-width:0}
+.ttitle{font-size:15px;font-weight:400;line-height:1.35;word-break:break-word}
+.tcard.done .ttitle{text-decoration:line-through}
+.tmeta{display:flex;gap:6px;margin-top:5px;flex-wrap:wrap}
+.bdg{font-size:11px;font-weight:600;padding:2px 8px;border-radius:20px}
+.bdg.work{color:#1a4fa8;background:#edf2ff}.bdg.personal{color:#6b35a8;background:#f3edff}
+.bdg.health{color:#1a7a45;background:#edfff4}.bdg.urgent{color:#c4521a;background:#fef3ec}
+.bdg.other{color:#5a5550;background:#f0ede7}
+.tact{display:flex;gap:4px;align-items:center;flex-shrink:0}
+.del{background:none;border:none;color:var(--text3);cursor:pointer;font-size:19px;line-height:1;padding:2px}
+.del:active{color:#c0392b}
+.wabtn{background:#e7faf0;border:none;border-radius:20px;padding:4px 9px;font-size:11px;font-weight:600;color:#128c4e;cursor:pointer;display:flex;align-items:center;gap:4px;white-space:nowrap}
+.wai{width:13px;height:13px;fill:#128c4e;flex-shrink:0}
+.evcard{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:12px 13px;display:flex;gap:12px;margin-bottom:7px;align-items:stretch}
+.evdtcol{display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:42px;background:var(--bg);border-radius:var(--radius-sm);padding:7px 5px}
+.evday{font-family:'DM Serif Display',serif;font-size:21px;line-height:1}
+.evmon{font-size:10px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--text3);margin-top:2px}
+.evbody{flex:1;min-width:0}
+.evtitle{font-size:15px;font-weight:600;line-height:1.3}
+.evtrow{display:flex;align-items:center;gap:6px;margin-top:4px;flex-wrap:wrap}
+.evtime{font-size:12px;color:var(--text2)}
+.evcard.past{opacity:.4}
+.evact{display:flex;gap:4px;align-items:flex-start;flex-shrink:0}
+/* CAL */
+.calwrap{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1rem;margin-bottom:1rem}
+.calnav{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem}
+.calmtitle{font-family:'DM Serif Display',serif;font-size:1.2rem}
+.calarrow{background:none;border:1.5px solid var(--border2);border-radius:50%;width:30px;height:30px;cursor:pointer;font-size:15px;color:var(--text2);display:flex;align-items:center;justify-content:center}
+.calgrid{display:grid;grid-template-columns:repeat(7,1fr);gap:2px}
+.caldow{text-align:center;font-size:10px;font-weight:600;color:var(--text3);letter-spacing:.04em;padding-bottom:6px;text-transform:uppercase}
+.calday{aspect-ratio:1;display:flex;align-items:center;justify-content:center;border-radius:50%;font-size:13px;cursor:pointer;position:relative;color:var(--text2);transition:background .15s;user-select:none}
+.calday:hover{background:var(--surface2)}
+.calday.om{opacity:.3}
+.calday.td{font-weight:700;color:var(--accent)}
+.calday.hev::after{content:'';position:absolute;bottom:3px;left:50%;transform:translateX(-50%);width:4px;height:4px;border-radius:50%;background:var(--accent)}
+.calday.sel{background:var(--text)!important;color:#fff!important}
+.calday.sel.td{background:var(--accent)!important}
+.calday.sel::after{background:#fff!important}
+.caldayp{margin-top:.75rem;padding-top:.75rem;border-top:.5px solid var(--border)}
+.caldayl{font-size:12px;font-weight:600;color:var(--text2);margin-bottom:.5rem}
+/* BANK HERO */
+.bhero{background:linear-gradient(135deg,#1a4fa8,#0d3278);border-radius:var(--radius);padding:1.25rem;margin-bottom:1rem;color:#fff}
+.bherolbl{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;opacity:.7;margin-bottom:.2rem}
+.bherorange{font-size:12px;opacity:.6;margin-bottom:.4rem}
+.bherohrs{font-family:'DM Serif Display',serif;font-size:2.8rem;line-height:1}
+.bherosub{font-size:12px;opacity:.7;margin-top:.2rem}
+.bprogbar{height:4px;background:rgba(255,255,255,.2);border-radius:2px;overflow:hidden;margin-top:.75rem}
+.bprogfill{height:100%;background:#fff;border-radius:2px;transition:width .4s}
+/* PAY CARD */
+.paycard{background:var(--surface);border:1.5px solid var(--bank-light);border-radius:var(--radius);padding:1rem;margin-bottom:1rem}
+.payctitle{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--bank);margin-bottom:.75rem}
+.payrow{display:flex;justify-content:space-between;align-items:baseline;padding:5px 0;border-bottom:.5px solid var(--border)}
+.payrow:last-child{border-bottom:none}
+.payrlbl{font-size:13px;color:var(--text2)}
+.payrlbl small{font-size:11px;color:var(--text3);display:block;margin-top:1px}
+.payRval{font-size:14px;font-weight:600}
+.payRval.neg{color:#c4521a}
+.paytotal{display:flex;justify-content:space-between;align-items:center;margin-top:.75rem;padding:.75rem;background:var(--bank-bg);border-radius:var(--radius-sm)}
+.paytlbl{font-size:13px;font-weight:700;color:var(--bank)}
+.paytval{font-family:'DM Serif Display',serif;font-size:1.6rem;color:var(--bank)}
+/* MINI STATS */
+.bmini{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:1rem}
+.bms{background:var(--surface);border:1px solid var(--bank-light);border-radius:var(--radius);padding:10px 8px;text-align:center}
+.bmsn{font-family:'DM Serif Display',serif;font-size:1.3rem;color:var(--bank);line-height:1}
+.bmsl{font-size:10px;color:var(--text2);margin-top:2px;font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+/* BANK FORM */
+.bform{background:var(--surface);border-radius:var(--radius);border:1.5px solid var(--bank-light);padding:1rem;margin-bottom:1rem;display:flex;flex-direction:column;gap:9px}
+.bformtitle{font-size:13px;font-weight:600;color:var(--bank)}
+.tlbl{font-size:11px;color:var(--text2);font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px}
+.bform input{border:1.5px solid var(--border)}
+.bform input:focus{border-color:var(--bank)!important;outline:none}
+/* BANK ENTRY */
+.bentry{background:var(--surface);border:1px solid var(--bank-light);border-radius:var(--radius);padding:11px 13px;margin-bottom:7px}
+.bentryrow{display:flex;align-items:flex-start;gap:10px}
+.bentryicon{width:34px;height:34px;border-radius:var(--radius-sm);background:var(--bank-bg);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
+.bentrybody{flex:1;min-width:0}
+.bentryhrs{font-family:'DM Serif Display',serif;font-size:1.05rem;color:var(--bank);line-height:1}
+.bentrydet{font-size:12px;color:var(--text2);margin-top:2px}
+/* WEEK SELECTOR */
+.wksel{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:1rem;overflow:hidden}
+.wkselitem{padding:12px 14px;border-bottom:.5px solid var(--border);cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:background .15s}
+.wkselitem:last-child{border-bottom:none}
+.wkselitem:hover{background:var(--surface2)}
+.wkselitem.selwk{background:var(--bank-bg)}
+.wksellbl{font-size:14px;font-weight:700}
+.wkselsub{font-size:12px;color:var(--text3);margin-top:1px}
+.wkselval{text-align:right}
+/* Month accordion */
+.mo-accordion{margin-bottom:.5rem;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.mo-summary{display:flex;justify-content:space-between;align-items:center;padding:11px 14px;cursor:pointer;background:var(--surface2);list-style:none;user-select:none}
+.mo-summary::-webkit-details-marker{display:none}
+details.mo-accordion[open] .mo-summary{background:var(--bank-bg);border-bottom:1px solid var(--border2)}
+.mo-summary:hover{background:var(--bank-bg)}
+.mo-title{font-size:13px;font-weight:800;letter-spacing:.03em;color:var(--text)}
+.mo-meta{font-size:11px;color:var(--text3);margin-top:1px}
+.mo-right{text-align:right}
+.mo-total{font-family:'DM Serif Display',serif;font-size:.95rem;color:var(--bank)}
+.mo-arrow{font-size:10px;color:var(--text3);margin-left:8px;transition:transform .2s}
+details.mo-accordion[open] .mo-arrow{transform:rotate(180deg)}
+.wkselhrs{font-family:'DM Serif Display',serif;font-size:1rem;color:var(--bank)}
+/* OVERVIEW */
+.sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-bottom:1.1rem}
+.sbox{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:13px 10px;text-align:center}
+.sboxn{font-family:'DM Serif Display',serif;font-size:1.9rem;line-height:1}
+.sboxl{font-size:10px;color:var(--text2);margin-top:3px;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+.progwrap{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:13px;margin-bottom:1.1rem}
+.progtop{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:9px}
+.proglbl{font-size:13px;font-weight:700}
+.progpct{font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--accent)}
+.progbar{height:5px;background:var(--bg);border-radius:3px;overflow:hidden}
+.progfill{height:100%;background:var(--accent);border-radius:3px;transition:width .4s}
+.empty{text-align:center;padding:2.5rem 1rem;color:var(--text3);font-size:14px}
+.emptyicon{font-size:2.2rem;margin-bottom:.6rem;display:block}
+/* MODAL */
+.moverlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:100;align-items:flex-end;justify-content:center}
+.moverlay.open{display:flex}
+.modal{background:var(--surface);border-radius:20px 20px 0 0;width:100%;max-width:480px;padding:1.5rem 1.5rem 2.5rem}
+.mtitle{font-family:'DM Serif Display',serif;font-size:1.3rem;margin-bottom:.2rem}
+.msub{font-size:13px;color:var(--text3);margin-bottom:1rem}
+.modal textarea{width:100%;padding:10px 13px;border-radius:var(--radius-sm);border:1.5px solid var(--border);background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.5;resize:none;outline:none;min-height:110px}
+.modal textarea:focus{border-color:var(--wa)}
+.mbtns{display:flex;gap:8px;margin-top:1rem}
+.btnwa{flex:1;padding:12px;border-radius:var(--radius-sm);border:none;background:var(--wa);color:#fff;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px}
+.btncancel{padding:12px 20px;border-radius:var(--radius-sm);border:1.5px solid var(--border2);background:transparent;font-family:'DM Sans',sans-serif;font-size:14px;cursor:pointer;color:var(--text2)}
+.ibanner{display:none;background:var(--text);color:#fff;padding:11px 14px;border-radius:var(--radius);margin-bottom:1rem;align-items:center;gap:10px;font-size:13px}
+.ibanner.show{display:flex}
+.ibanner button{background:#fff;color:var(--text);border:none;border-radius:6px;padding:5px 12px;font-size:12px;font-weight:600;cursor:pointer}
+.ibanner .dis{background:transparent;color:rgba(255,255,255,.6);font-size:18px;padding:0;margin-left:auto;border:none;cursor:pointer}
+/* ANNUAL LEAVE */
+.al-hero{background:linear-gradient(135deg,#1a7a45,#0d5230);border-radius:var(--radius);padding:1.25rem;margin-bottom:1rem;color:#fff}
+.al-hero-lbl{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;opacity:.7;margin-bottom:.2rem}
+.al-hero-sub{font-size:12px;opacity:.6;margin-bottom:.5rem}
+.al-hero-bal{font-family:'DM Serif Display',serif;font-size:3rem;line-height:1}
+.al-hero-sub2{font-size:13px;opacity:.8;margin-top:.2rem}
+.al-prog-bar{height:4px;background:rgba(255,255,255,.2);border-radius:2px;overflow:hidden;margin-top:.75rem}
+.al-prog-fill{height:100%;background:#fff;border-radius:2px;transition:width .4s}
+.al-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:1rem}
+.alstat{background:var(--surface);border:1px solid #c0ddc8;border-radius:var(--radius);padding:10px 8px;text-align:center}
+.alstatn{font-family:'DM Serif Display',serif;font-size:1.3rem;color:#1a7a45;line-height:1}
+.alstatl{font-size:10px;color:var(--text2);margin-top:2px;font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+.al-info{background:#edfff4;border:1px solid #c0ddc8;border-radius:var(--radius);padding:.85rem 1rem;margin-bottom:1rem;font-size:13px;color:#1a4a2a;line-height:1.5}
+.al-info strong{font-weight:600}
+.alform{background:var(--surface);border-radius:var(--radius);border:1.5px solid #c0ddc8;padding:1rem;margin-bottom:1rem;display:flex;flex-direction:column;gap:9px}
+.alform-title{font-size:13px;font-weight:600;color:#1a7a45}
+.alform input,.alform select,.alform textarea{width:100%;padding:9px 12px;border-radius:var(--radius-sm);border:1.5px solid var(--border);background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:14px;outline:none;transition:border-color .15s}
+.alform input:focus,.alform select:focus{border-color:#1a7a45}
+.alform input::placeholder,.alform textarea::placeholder{color:var(--text3)}
+.abtn.al{background:#1a7a45}
+.alentry{background:var(--surface);border:1px solid #c0ddc8;border-radius:var(--radius);padding:11px 13px;margin-bottom:7px;display:flex;align-items:flex-start;gap:10px}
+.alentry-icon{width:34px;height:34px;border-radius:var(--radius-sm);background:#edfff4;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
+.alentry-icon.taken{background:#fff3f3}
+.alentry-body{flex:1;min-width:0}
+.alentry-hrs{font-family:'DM Serif Display',serif;font-size:1.05rem;color:#1a7a45;line-height:1}
+.alentry-hrs.taken{color:#c4521a}
+.alentry-det{font-size:12px;color:var(--text2);margin-top:2px}
+.alentry-date{font-size:11px;color:var(--text3);margin-top:1px}
+.al-accrual-note{font-size:11px;color:var(--text3);text-align:center;padding:.5rem;margin-bottom:.5rem}
+/* SALARY TOGGLE */
+.sal-toggle-bar{display:flex;align-items:center;justify-content:space-between;background:var(--surface2);border-radius:var(--radius-sm);padding:9px 13px;margin-bottom:1rem}
+.sal-toggle-label{font-size:13px;color:var(--text2);display:flex;align-items:center;gap:7px}
+.sal-toggle-btn{display:flex;align-items:center;gap:6px;padding:6px 14px;border-radius:20px;border:none;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;cursor:pointer;transition:all .2s}
+.sal-toggle-btn.show{background:#1a7a45;color:#fff}
+.sal-toggle-btn.hide{background:#c4521a;color:#fff}
+.sal-hidden{filter:blur(6px);user-select:none;pointer-events:none;transition:filter .3s}
+.sal-hidden-card{background:var(--surface2);border:1.5px dashed var(--border2);border-radius:var(--radius);padding:1.25rem;margin-bottom:1rem;text-align:center;color:var(--text3);font-size:13px}
+.sal-hidden-card span{font-size:1.5rem;display:block;margin-bottom:.4rem}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" async onerror="console.warn('jsPDF CDN failed — PDF export unavailable')"></script>
+</head>
+<body>
+<div class="app">
+  <div class="header">
+    <div class="header-top">
+      <div>
+        <div class="app-title">Hi, <span>Anand</span> &#128075;</div>
+        <div class="date-chip" id="today-chip"></div>
+      </div>
+      <div class="avatar">A</div>
+    </div>
+    <div class="header-sub" id="header-sub"></div>
+  </div>
+  <div class="nav">
+    <button class="nav-btn active" onclick="sw('todo',this)">&#10003;<br>To-do</button>
+    <button class="nav-btn" onclick="sw('schedule',this)">&#128197;<br>Schedule</button>
+    <button class="nav-btn" onclick="sw('calendar',this)">&#128467;<br>Calendar</button>
+    <button class="nav-btn" onclick="sw('overview',this)">&#128202;<br>Overview</button>
+    <button class="nav-btn bnav" style="grid-column:span 1" onclick="sw('bank',this)">&#127974;<br>Bank Work</button>
+    <button class="nav-btn bnav" style="grid-column:span 1" onclick="sw('prevweeks',this)">&#128203;<br>Prev Weeks</button>
+    <button class="nav-btn" id="nav-al" style="grid-column:span 1" onclick="sw('al',this)">&#127334;<br>Accrued A/L</button>
+    <button class="nav-btn" style="grid-column:span 1" onclick="sw('settings',this)">&#9881;<br>Settings</button>
+  </div>
+  <div class="content">
+    <div id="install-banner" class="ibanner">
+      <span>&#128242; Add to home screen!</span>
+      <button onclick="installApp()">Install</button>
+      <button class="dis" onclick="dismissBanner()">x</button>
+    </div>
+
+    <!-- TO-DO -->
+    <div id="p-todo" class="pane active">
+      <div class="add-form">
+        <input id="todo-in" type="text" placeholder="What needs to be done, Anand?" maxlength="200">
+        <div class="form-row">
+          <select id="todo-cat" style="flex:1">
+            <option value="work">Work</option>
+            <option value="personal">Personal</option>
+            <option value="health">Health</option>
+            <option value="urgent">Urgent</option>
+            <option value="other">Other</option>
+          </select>
+          <button class="abtn" onclick="addTodo()">Add</button>
+        </div>
+      </div>
+      <div class="filters">
+        <button class="fpill active" onclick="setF('all',this)">All</button>
+        <button class="fpill" onclick="setF('active',this)">Active</button>
+        <button class="fpill" onclick="setF('done',this)">Done</button>
+        <button class="fpill" onclick="setF('urgent',this)">Urgent</button>
+        <button class="fpill" onclick="setF('work',this)">Work</button>
+      </div>
+      <div id="todo-list"></div>
+    </div>
+
+    <!-- SCHEDULE -->
+    <div id="p-schedule" class="pane">
+      <div class="add-form">
+        <input id="sch-in" type="text" placeholder="Event name..." maxlength="200">
+        <input id="sch-dt" type="datetime-local">
+        <div class="form-row">
+          <select id="sch-cat" style="flex:1">
+            <option value="work">Work</option>
+            <option value="personal">Personal</option>
+            <option value="health">Health</option>
+            <option value="other">Other</option>
+          </select>
+          <button class="abtn" onclick="addEvent()">Add</button>
+        </div>
+      </div>
+      <div id="sch-list"></div>
+    </div>
+
+    <!-- CALENDAR -->
+    <div id="p-calendar" class="pane">
+      <div class="calwrap">
+        <div class="calnav">
+          <button class="calarrow" onclick="calPrev()">&#8249;</button>
+          <div class="calmtitle" id="cal-title"></div>
+          <button class="calarrow" onclick="calNext()">&#8250;</button>
+        </div>
+        <div class="calgrid" id="cal-grid"></div>
+        <div id="cal-day-panel"></div>
+      </div>
+    </div>
+
+    <!-- BANK WORK -->
+    <div id="p-bank" class="pane">
+      <div class="bform">
+        <div style="background:linear-gradient(135deg,#1a4fa8,#0d3278);border-radius:var(--radius-sm);padding:.85rem">
+          <div style="font-size:14px;font-weight:700;color:#fff;margin-bottom:.65rem">&#9889; Log Bank Session</div>
+          <div style="display:flex;gap:6px;margin-bottom:.5rem">
+            <button onclick="qlSetDate(0)" id="ql-today" style="flex:1;padding:9px 4px;border-radius:8px;border:2px solid rgba(255,255,255,.6);background:rgba(255,255,255,.25);color:#fff;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;cursor:pointer">Today</button>
+            <button onclick="qlSetDate(-1)" id="ql-yesterday" style="flex:1;padding:9px 4px;border-radius:8px;border:2px solid rgba(255,255,255,.2);background:transparent;color:rgba(255,255,255,.8);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer">Yesterday</button>
+            <button onclick="qlSetDate(1)" id="ql-tomorrow" style="flex:1;padding:9px 4px;border-radius:8px;border:2px solid rgba(255,255,255,.2);background:transparent;color:rgba(255,255,255,.8);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer">Tomorrow</button>
+          </div>
+          <div style="margin-bottom:.75rem">
+            <div style="font-size:10px;color:rgba(255,255,255,.6);font-weight:700;letter-spacing:.05em;margin-bottom:4px">&#128197; OR PICK ANY DATE (for past/future weeks)</div>
+            <input id="ql-date" type="date" onchange="qlDatePicked()" style="width:100%;padding:9px 12px;border-radius:8px;border:2px solid rgba(255,255,255,.4);background:rgba(255,255,255,.9);color:#0d1f4e;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;outline:none;cursor:pointer">
+          </div>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:.7rem">
+            <div style="display:flex;align-items:center;gap:8px">
+              <div style="font-size:11px;color:#fff;font-weight:800;letter-spacing:.05em;min-width:36px;text-shadow:0 1px 2px rgba(0,0,0,.3)">FROM</div>
+              <div style="display:flex;flex:1;gap:6px;align-items:center">
+                <select id="ql-fh" style="min-width:58px;flex:1;padding:10px 6px;border-radius:8px;border:2px solid rgba(255,255,255,.6);background:#fff;color:#0d1f4e;font-family:'DM Sans',sans-serif;font-size:20px;font-weight:700;outline:none;text-align:center;cursor:pointer"><option value="00">00</option><option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option><option value="09">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option></select>
+                <span style="color:#fff;font-size:20px;font-weight:800;padding:0 2px">:</span>
+                <select id="ql-fm" style="min-width:58px;flex:1;padding:10px 6px;border-radius:8px;border:2px solid rgba(255,255,255,.6);background:#fff;color:#0d1f4e;font-family:'DM Sans',sans-serif;font-size:20px;font-weight:700;outline:none;text-align:center;cursor:pointer"><option value="00">00</option><option value="05">05</option><option value="10">10</option><option value="15">15</option><option value="20">20</option><option value="25">25</option><option value="30">30</option><option value="35">35</option><option value="40">40</option><option value="45">45</option><option value="50">50</option><option value="55">55</option></select>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px">
+              <div style="font-size:11px;color:#fff;font-weight:800;letter-spacing:.05em;min-width:36px;text-shadow:0 1px 2px rgba(0,0,0,.3)">TO</div>
+              <div style="display:flex;flex:1;gap:6px;align-items:center">
+                <select id="ql-th" style="min-width:58px;flex:1;padding:10px 6px;border-radius:8px;border:2px solid rgba(255,255,255,.6);background:#fff;color:#0d1f4e;font-family:'DM Sans',sans-serif;font-size:20px;font-weight:700;outline:none;text-align:center;cursor:pointer"><option value="00">00</option><option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option><option value="09">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option></select>
+                <span style="color:#fff;font-size:20px;font-weight:800;padding:0 2px">:</span>
+                <select id="ql-tm" style="min-width:58px;flex:1;padding:10px 6px;border-radius:8px;border:2px solid rgba(255,255,255,.6);background:#fff;color:#0d1f4e;font-family:'DM Sans',sans-serif;font-size:20px;font-weight:700;outline:none;text-align:center;cursor:pointer"><option value="00">00</option><option value="05">05</option><option value="10">10</option><option value="15">15</option><option value="20">20</option><option value="25">25</option><option value="30">30</option><option value="35">35</option><option value="40">40</option><option value="45">45</option><option value="50">50</option><option value="55">55</option></select>
+              </div>
+            </div>
+          </div>
+          <div style="display:flex;gap:7px;margin-bottom:.6rem;align-items:flex-end">
+            <div style="flex:2">
+              <div style="font-size:10px;color:rgba(255,255,255,.55);font-weight:600;margin-bottom:3px">NOTE (optional)</div>
+              <input id="ql-note" type="text" placeholder="Ward, agency..." maxlength="80" style="width:100%;padding:9px 10px;border-radius:6px;border:1.5px solid rgba(255,255,255,.2);background:rgba(255,255,255,.1);color:#fff;font-family:'DM Sans',sans-serif;font-size:13px;outline:none">
+            </div>
+            <div style="flex:1.3">
+              <div style="font-size:10px;color:rgba(255,255,255,.55);font-weight:600;margin-bottom:3px">DAY TYPE</div>
+              <select id="ql-daytype" style="width:100%;padding:9px 8px;border-radius:6px;border:1.5px solid rgba(255,255,255,.2);background:rgba(255,255,255,.1);color:#fff;font-family:'DM Sans',sans-serif;font-size:12px;outline:none;color-scheme:dark">
+                <option value="auto">Auto</option>
+                <option value="weekday">Weekday</option>
+                <option value="saturday">Saturday</option>
+                <option value="sunday">Sunday</option>
+                <option value="bankholiday">Bank Hol</option>
+              </select>
+            </div>
+          </div>
+          <button onclick="qlLog()" style="width:100%;padding:12px;border-radius:8px;border:none;background:#fff;color:var(--bank);font-family:'DM Sans',sans-serif;font-size:15px;font-weight:800;cursor:pointer">&#10003; Log Session</button>
+          <div id="ql-status" style="font-size:12px;color:rgba(255,255,255,.85);margin-top:.45rem;min-height:14px;text-align:center;font-weight:500"></div>
+        </div>
+        <input id="bank-date" type="date" style="display:none">
+        <input id="bank-from" type="time" style="display:none">
+        <input id="bank-to" type="time" style="display:none">
+        <input id="bank-daytype" style="display:none">
+        <input id="bank-note" type="text" style="display:none">
+      </div>
+
+      <div class="bhero">
+        <div class="bherolbl">This Week's Bank Hours</div>
+        <div class="bherorange" id="bank-cur-range"></div>
+        <div class="bherohrs" id="bank-cur-hrs">0h 0m</div>
+        <div class="bherosub" id="bank-cur-sess">0 sessions</div>
+        <div class="bprogbar"><div class="bprogfill" id="bank-prog" style="width:0%"></div></div>
+      </div>
+
+      <div class="sal-toggle-bar">
+        <div class="sal-toggle-label">&#128274; Salary details</div>
+        <button class="sal-toggle-btn hide" id="sal-btn" onclick="toggleSalary()">&#128065; Show Salary</button>
+      </div>
+
+      <div id="pay-section">
+        <div class="sal-hidden-card" id="pay-hidden">
+          <span>&#128274;</span>Salary hidden — tap "Show Salary" to reveal
+        </div>
+        <div id="pay-card-wrap" style="display:none">
+          <div class="paycard">
+            <div class="payctitle">Approx Pay - This Week</div>
+            <div style="font-size:11px;color:var(--text3);margin-bottom:.6rem">&#8505; Estimated &#8212; actual pay may differ slightly</div>
+            <div class="payrow">
+              <div class="payrlbl">Normal hours (6am-8pm)<small id="pnh"></small></div>
+              <div class="payRval" id="pna">0.00</div>
+            </div>
+            <div class="payrow">
+              <div class="payrlbl">Night / Saturday<small id="puh"></small></div>
+              <div class="payRval" id="pua">0.00</div>
+            </div>
+            <div class="payrow" id="p-sun-row-main" style="display:none">
+              <div class="payrlbl">Sunday / Bank Holiday<small id="psunh"></small></div>
+              <div class="payRval" id="psuna" style="color:#b45309">0.00</div>
+            </div>
+            <div class="payrow">
+              <div class="payrlbl">Gross pay</div>
+              <div class="payRval" id="pgross">0.00</div>
+            </div>
+            <div class="payrow">
+              <div class="payrlbl">Income tax (20%)<small>Basic rate - bank work</small></div>
+              <div class="payRval neg" id="ptax">-0.00</div>
+            </div>
+            <div class="payrow">
+              <div class="payrlbl">National Insurance (8%)<small>Above 242/wk threshold</small></div>
+              <div class="payRval neg" id="pni">-0.00</div>
+            </div>
+            <div class="paytotal">
+              <div class="paytlbl">Approx take-home</div>
+              <div class="paytval" id="pnet">0.00</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bmini">
+        <div class="bms"><div class="bmsn" id="bms-today">0h</div><div class="bmsl">Today</div></div>
+        <div class="bms"><div class="bmsn" id="bms-all">0h</div><div class="bmsl">All Time</div></div>
+        <div class="bms"><div class="bmsn" id="bms-sess">0</div><div class="bmsl">Sessions</div></div>
+      </div>
+
+
+      <div id="bank-cur-list"></div>
+    </div>
+
+    <!-- PREVIOUS WEEKS -->
+    <div id="p-prevweeks" class="pane">
+      <div id="prev-selector"></div>
+      <div id="prev-detail"></div>
+    </div>
+
+    <!-- ANNUAL LEAVE -->
+    <div id="p-al" class="pane">
+      <div class="al-hero">
+        <div class="al-hero-lbl">&#127974; Annual Leave Balance</div>
+        <div class="al-hero-sub">From 1 Apr 2026 &mdash; 12.07% of hours worked</div>
+        <div class="al-hero-bal" id="al-balance">0.00 hrs</div>
+        <div class="al-hero-sub2" id="al-bal-sub">0.00 accrued &minus; 0.00 annual leave taken</div>
+        <div class="al-prog-bar"><div class="al-prog-fill" id="al-prog" style="width:0%"></div></div>
+      </div>
+
+      <div class="al-stats">
+        <div class="alstat"><div class="alstatn" id="al-bankhrs">0h</div><div class="alstatl">Bank hrs (Apr 1+)</div></div>
+        <div class="alstat"><div class="alstatn" id="al-accrued">0h 0m</div><div class="alstatl">A/L accrued</div></div>
+        <div class="alstat"><div class="alstatn" id="al-taken">0h 0m</div><div class="alstatl">A/L used</div></div>
+      </div>
+
+      <div class="al-info">
+        <strong>How it works:</strong> Every hour worked from 1 Apr 2026 accrues 12.07% A/L (NHS statutory: 5.6 weeks ÷ 46.4 working weeks). You can <strong>take A/L</strong> as time off or <strong>cash it in</strong> for pay at your normal rate (£12.92/hr). Both reduce your balance. Sick leave and other absences are for reference only. <strong>Cash-in cut-off:</strong> before Sunday noon = paid that Friday · after Sunday noon = following Friday.
+      </div>
+
+      <div class="alform">
+        <div class="alform-title">&#10133; Log Annual Leave Taken</div>
+        <input id="al-date" type="date" placeholder="Date of leave">
+        <div class="form-row">
+          <div style="flex:1">
+            <div class="tlbl">Hours taken</div>
+            <input id="al-hours" type="number" min="0.5" max="12" step="0.5" placeholder="e.g. 7.5">
+          </div>
+          <div style="flex:1">
+            <div class="tlbl">Type</div>
+            <select id="al-type">
+              <option value="annual">Take A/L (time off)</option>
+              <option value="cashin">Cash In A/L (paid)</option>
+              <option value="sick">Sick Leave</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+        </div>
+        <input id="al-note" type="text" placeholder="Notes (optional)..." maxlength="100">
+        <button class="abtn al" onclick="addAL()" style="width:100%;padding:11px">Log Leave</button>
+      </div>
+
+      <div id="al-list"></div>
+    </div>
+
+    <!-- OVERVIEW -->
+    <div id="p-overview" class="pane">
+      <div class="sgrid">
+        <div class="sbox"><div class="sboxn" id="ov-total">0</div><div class="sboxl">Tasks</div></div>
+        <div class="sbox"><div class="sboxn" id="ov-done">0</div><div class="sboxl">Done</div></div>
+        <div class="sbox"><div class="sboxn" id="ov-ev">0</div><div class="sboxl">Events</div></div>
+      </div>
+      <div class="paycard" style="margin-bottom:1.1rem;border-color:#c0ddc8">
+        <div class="payctitle" style="color:#1a7a45">&#127334; Annual Leave Balance</div>
+        <div class="payrow"><div class="payrlbl">Bank hrs (from 1 Apr 2026)</div><div class="payRval" id="ov-al-bankhrs">0h</div></div>
+        <div class="payrow"><div class="payrlbl">Hours accrued</div><div class="payRval" id="ov-al-accrued" style="color:#1a7a45">0h 0m</div></div>
+        <div class="payrow"><div class="payrlbl">A/L taken (time off)</div><div class="payRval neg" id="ov-al-taken">0h 0m</div></div>
+        <div class="payrow"><div class="payrlbl">A/L cashed in</div><div class="payRval" style="color:var(--bank)" id="ov-al-cashin">0h 0m</div></div>
+        <div class="payrow"><div class="payrlbl">Cash earned from A/L</div><div class="payRval pay-sensitive" style="color:var(--bank)" id="ov-al-cashpay">~&#163;0.00</div></div>
+        <div class="paytotal" style="background:#edfff4">
+          <div class="paytlbl" style="color:#1a7a45">A/L Balance</div>
+          <div class="paytval" style="color:#1a7a45" id="ov-al-bal">0h 0m</div>
+        </div>
+      </div>
+      <div class="paycard" style="margin-bottom:1.1rem" id="ov-pay-card">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.6rem">
+          <div class="payctitle" style="margin-bottom:0">&#127974; This Week - Bank Work</div>
+          <button class="sal-toggle-btn hide" id="ov-sal-btn" onclick="toggleSalary()" style="font-size:11px;padding:4px 10px">&#128065; Show</button>
+        </div>
+        <div class="payrow"><div class="payrlbl">Hours worked</div><div class="payRval" id="ov-hrs">0h</div></div>
+        <div id="ov-pay-hidden" style="padding:8px 0;text-align:center;color:var(--text3);font-size:12px">&#128274; Tap "Show" to see salary</div>
+        <div id="ov-pay-reveal" style="display:none">
+          <div class="payrow"><div class="payrlbl">Gross pay</div><div class="payRval" id="ov-gross">&#163;0.00</div></div>
+          <div class="paytotal"><div class="paytlbl">Approx take-home</div><div class="paytval" id="ov-net">&#163;0.00</div></div>
+        </div>
+      </div>
+      <div class="progwrap">
+        <div class="progtop"><span class="proglbl">Tasks completed</span><span class="progpct" id="ov-pct">0%</span></div>
+        <div class="progbar"><div class="progfill" id="ov-bar" style="width:0%"></div></div>
+      </div>
+      <div id="ov-body"></div>
+    </div>
+
+    <!-- SETTINGS TAB -->
+    <div id="p-settings" class="pane">
+
+      <!-- Account -->
+      <div class="glbl">&#128100; Your Account</div>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1rem;margin-bottom:1rem">
+        <div style="display:flex;align-items:center;justify-content:space-between">
+          <div>
+            <div style="font-size:16px;font-weight:600" id="st-name-display">Anand</div>
+            <div style="font-size:12px;color:var(--text3);margin-top:2px">Your name</div>
+          </div>
+          <button onclick="stEditName()" class="abtn bk" style="padding:8px 16px;font-size:13px">Edit</button>
+        </div>
+      </div>
+
+      <!-- Pay settings - Band 2 hardcoded but shown clearly -->
+      <div class="glbl">&#127974; Pay Settings (2026/27)</div>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1rem;margin-bottom:1rem">
+        <div style="display:flex;gap:8px;margin-bottom:.75rem">
+          <div style="flex:1;background:#edf2ff;border-radius:var(--radius-sm);padding:10px;text-align:center">
+            <div style="font-size:11px;color:var(--text3);margin-bottom:3px;text-transform:uppercase;letter-spacing:.05em;font-weight:600">Normal rate</div>
+            <div style="font-family:'DM Serif Display',serif;font-size:1.2rem;color:var(--bank)" id="sch-st-nr">&#163;12.92/hr</div>
+            <div style="font-size:10px;color:var(--text3);margin-top:2px">6am &#8211; 8pm weekday</div>
+          </div>
+          <div style="flex:1;background:#fff3f0;border-radius:var(--radius-sm);padding:10px;text-align:center">
+            <div style="font-size:11px;color:var(--text3);margin-bottom:3px;text-transform:uppercase;letter-spacing:.05em;font-weight:600">Night / Sat</div>
+            <div style="font-family:'DM Serif Display',serif;font-size:1.2rem;color:var(--red)" id="sch-st-ur">&#163;18.22/hr</div>
+            <div style="font-size:10px;color:var(--text3);margin-top:2px">+41% (8pm &#8211; 6am)</div>
+          </div>
+          <div style="flex:1;background:#fff8e1;border-radius:var(--radius-sm);padding:10px;text-align:center">
+            <div style="font-size:11px;color:var(--text3);margin-bottom:3px;text-transform:uppercase;letter-spacing:.05em;font-weight:600">Sun / BH</div>
+            <div style="font-family:'DM Serif Display',serif;font-size:1.2rem;color:#b45309" id="sch-st-sun">&#163;23.64/hr</div>
+            <div style="font-size:10px;color:var(--text3);margin-top:2px">+83% (all day)</div>
+          </div>
+        </div>
+        <div style="font-size:12px;color:var(--text3);background:var(--surface2);border-radius:var(--radius-sm);padding:8px 10px;margin-bottom:.75rem">&#127974; Band 2 AfC 2026/27 England. Pay is approximate &#8212; actual may vary.</div>
+        <!-- Custom Rate Override -->
+        <div style="padding-top:.75rem;border-top:1px solid var(--border)">
+          <div style="font-size:12px;font-weight:600;color:var(--text2);margin-bottom:.4rem;letter-spacing:.03em">&#9881; Custom Rate Override</div>
+          <div style="font-size:11px;color:var(--text3);margin-bottom:.6rem;line-height:1.5">Use when NHS updates pay rates (usually each April). Leave blank to use the standard rate.</div>
+          <div style="display:flex;gap:8px;align-items:flex-end">
+            <div style="flex:1">
+              <div class="tlbl">Custom hourly rate (£)</div>
+              <input id="st-custom-rate" type="number" min="8" max="100" step="0.01" placeholder="e.g. 13.34"
+                style="width:100%;padding:9px 12px;border-radius:var(--radius-sm);border:1.5px solid var(--border);background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:14px;outline:none">
+            </div>
+            <button class="abtn bk" onclick="saveCustomRate()" style="padding:10px 16px;white-space:nowrap">Apply</button>
+            <button onclick="clearCustomRate()" style="padding:10px 16px;border-radius:var(--radius-sm);border:1.5px solid var(--border2);background:transparent;font-family:'DM Sans',sans-serif;font-size:13px;cursor:pointer;color:var(--text3);white-space:nowrap">Clear</button>
+          </div>
+          <div id="st-custom-rate-status" style="font-size:12px;margin-top:.5rem;display:none"></div>
+        </div>
+      </div>
+
+      <!-- A/L Rules -->
+      <div class="glbl">&#127334; Annual Leave Rules</div>
+      <div style="background:#edfff4;border:1px solid #c0ddc8;border-radius:var(--radius);padding:1rem;margin-bottom:1rem;font-size:13px;color:#1a4a2a;line-height:1.6">
+        <div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid #c0ddc8;margin-bottom:6px"><span>Accrual starts</span><strong>1 April 2026</strong></div>
+        <div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid #c0ddc8;margin-bottom:6px"><span>Rate</span><strong>12.07% of hours worked</strong></div>
+        <div style="display:flex;justify-content:space-between;padding:4px 0"><span>What reduces balance?</span><strong>Annual Leave only</strong></div>
+        <div style="font-size:11px;color:#2a5a3a;margin-top:.6rem">Sick and other absences are tracked for reference but don&#8217;t affect your A/L balance.</div>
+      </div>
+
+      <!-- Export & Backup -->
+      <div class="glbl">&#128229; Export &amp; Backup</div>
+
+      <div style="background:#fff3cd;border:1.5px solid #ffc107;border-radius:var(--radius-sm);padding:10px 13px;margin-bottom:.75rem;font-size:12px;color:#856404;line-height:1.5">
+        &#9888;&#65039; <strong>Important:</strong> Clearing browser data will delete all your sessions. Export a backup regularly.
+      </div>
+
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1rem;margin-bottom:1rem">
+        <div style="font-size:13px;color:var(--text2);margin-bottom:.85rem;line-height:1.5">Save a copy of all your data. Import it anytime to restore everything instantly.</div>
+
+        <div style="background:#edfff4;border:1.5px solid #c0ddc8;border-radius:var(--radius-sm);padding:.85rem;margin-bottom:.65rem">
+          <div style="font-size:14px;font-weight:700;color:#1a7a45;margin-bottom:3px">&#128190; Full Data Backup (JSON)</div>
+          <div style="font-size:11px;color:var(--text3);margin-bottom:.65rem">Everything — sessions, A/L, settings · One tap to save, one tap to restore</div>
+          <div style="display:flex;gap:8px">
+            <button onclick="exportJSON()" style="flex:1;padding:9px;font-size:13px;background:#1a7a45;color:#fff;border:none;border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-weight:700;cursor:pointer">&#11123; Export Backup</button>
+            <label style="flex:1;padding:9px;font-size:13px;background:var(--surface2);color:var(--text);border:1.5px solid var(--border);border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-weight:600;cursor:pointer;text-align:center;display:flex;align-items:center;justify-content:center;gap:5px">
+              &#11121; Import Backup
+              <input type="file" accept=".json" onchange="importJSON(event)" style="display:none">
+            </label>
+          </div>
+          <div id="import-status" style="font-size:12px;margin-top:.5rem;display:none"></div>
+        </div>
+
+        <div style="background:#edf2ff;border:1px solid #dce8ff;border-radius:var(--radius-sm);padding:.85rem;margin-bottom:.65rem">
+          <div style="font-size:14px;font-weight:600;color:var(--bank);margin-bottom:.5rem">&#128196; PDF Summary Report</div>
+          <div style="font-size:11px;color:var(--text3);margin-bottom:.6rem">Monthly breakdown · Perfect for mortgage &amp; tax records</div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <select id="pdf-month-sel" style="flex:1;min-width:130px;padding:8px 10px;border-radius:var(--radius-sm);border:1.5px solid var(--border);background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:13px;outline:none"></select>
+            <button class="abtn bk" onclick="exportPDF()" style="padding:8px 18px;font-size:13px;white-space:nowrap">&#11123; PDF</button>
+          </div>
+        </div>
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:.85rem;display:flex;align-items:center;justify-content:space-between">
+          <div>
+            <div style="font-size:14px;font-weight:600;color:var(--text)">&#128202; CSV Spreadsheet</div>
+            <div style="font-size:11px;color:var(--text3);margin-top:2px">All sessions · Opens in Excel or Google Sheets</div>
+          </div>
+          <button onclick="exportCSV()" style="padding:8px 18px;font-size:13px;background:var(--text);color:#fff;border:none;border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-weight:600;cursor:pointer;white-space:nowrap">&#11123; CSV</button>
+        </div>
+      </div>
+
+      <div class="glbl">&#128242; Install as App</div>
+
+      <div id="install-prompt-card" style="display:none;background:linear-gradient(135deg,#1a4fa8,#0d3278);border-radius:var(--radius);padding:1rem;margin-bottom:.75rem">
+        <div style="font-size:14px;font-weight:700;color:#fff;margin-bottom:.4rem">&#127881; Ready to install!</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.75);margin-bottom:.75rem">Tap below to install as a home screen app.</div>
+        <button onclick="triggerInstall()" style="width:100%;padding:11px;border-radius:var(--radius-sm);border:none;background:#fff;color:var(--bank);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;cursor:pointer">&#8659; Install App Now</button>
+      </div>
+
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1rem;margin-bottom:1rem">
+        <div style="font-size:13px;color:var(--text2);margin-bottom:.85rem;line-height:1.5">Open your HTTPS URL and add to home screen once — opens like a real app from then on.</div>
+        <div style="background:#e8f5e9;border:1px solid #a5d6a7;border-radius:var(--radius-sm);padding:.85rem;margin-bottom:.65rem">
+          <div style="font-size:13px;font-weight:700;color:#2e7d32;margin-bottom:.6rem">&#129505; Android — Chrome</div>
+          <div style="font-size:12px;color:var(--text2);display:flex;flex-direction:column;gap:6px">
+            <div style="display:flex;gap:9px"><span style="font-weight:700;color:#2e7d32;min-width:18px">1.</span><span>Open URL in <strong>Chrome</strong></span></div>
+            <div style="display:flex;gap:9px"><span style="font-weight:700;color:#2e7d32;min-width:18px">2.</span><span>Tap <strong>&#8942; menu</strong> &#8594; <strong>"Add to Home screen"</strong> &#8594; <strong>"Add"</strong> &#10003;</span></div>
+          </div>
+        </div>
+        <div style="background:#e3f2fd;border:1px solid #90caf9;border-radius:var(--radius-sm);padding:.85rem">
+          <div style="font-size:13px;font-weight:700;color:#1565c0;margin-bottom:.6rem">&#63743; iPhone — Safari only</div>
+          <div style="font-size:12px;color:var(--text2);display:flex;flex-direction:column;gap:6px">
+            <div style="display:flex;gap:9px"><span style="font-weight:700;color:#1565c0;min-width:18px">1.</span><span>Open URL in <strong>Safari</strong> (not Chrome)</span></div>
+            <div style="display:flex;gap:9px"><span style="font-weight:700;color:#1565c0;min-width:18px">2.</span><span>Tap <strong>Share &#11014;</strong> &#8594; <strong>"Add to Home Screen"</strong> &#8594; <strong>"Add"</strong> &#10003;</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- App Info -->
+      <div class="glbl">&#8505; App Info</div>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1rem;margin-bottom:1rem;font-size:13px;color:var(--text2);line-height:1.8">
+        <div style="display:flex;justify-content:space-between"><span>App</span><span style="font-weight:500">Anand&#8217;s Planner</span></div>
+        <div style="display:flex;justify-content:space-between"><span>Pay year</span><span style="font-weight:500">2026/27 England</span></div>
+        <div style="display:flex;justify-content:space-between"><span>Tax rate</span><span style="font-weight:500">20% basic rate</span></div>
+        <div style="display:flex;justify-content:space-between"><span>NI rate</span><span style="font-weight:500">8% above &#163;242/wk</span></div>
+        <div style="display:flex;justify-content:space-between"><span>Pay day</span><span style="font-weight:500">Friday after week ends</span></div>
+        <div style="display:flex;justify-content:space-between"><span>Week</span><span style="font-weight:500">Monday &#8211; Sunday</span></div>
+      </div>
+
+      <div class="watermark">&#9749; Created by <strong>Anand</strong></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- WA Modal -->
+<div class="moverlay" id="wa-modal" onclick="closeWa(event)">
+  <div class="modal">
+    <div class="mtitle">Send WhatsApp Reminder</div>
+    <div class="msub">Edit your message then tap Send</div>
+    <textarea id="wa-msg" rows="5"></textarea>
+    <div class="mbtns">
+      <button class="btncancel" onclick="closeWa()">Cancel</button>
+      <button class="btnwa" onclick="sendWa()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.553 4.112 1.522 5.836L.057 23.786a.5.5 0 0 0 .637.612l6.094-1.596A11.947 11.947 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.79 9.79 0 0 1-4.988-1.362l-.357-.212-3.701.97.987-3.608-.233-.37A9.791 9.791 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+        Send on WhatsApp
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+// Global error handler — shows error visibly instead of blank screen
+window.onerror=function(msg,src,line,col,err){
+  console.error('App error:',msg,'at',src,line);
+  // Only show error banner for serious errors, not minor ones
+  if(document.body&&msg&&!msg.includes('Script error')){
+    const existing=document.getElementById('_err_banner');
+    if(!existing){
+      const d=document.createElement('div');
+      d.id='_err_banner';
+      d.style.cssText='position:fixed;bottom:0;left:0;right:0;background:#c4521a;color:#fff;padding:10px 14px;font-size:12px;font-family:sans-serif;z-index:9999;line-height:1.4';
+      d.innerHTML='&#9888; App error: '+String(msg).slice(0,120)+'<br><small>Please refresh the page. If this keeps happening, try clearing browser cache.</small>';
+      d.onclick=function(){d.remove();};
+      document.body.appendChild(d);
+    }
+  }
+  return false;
+};
+let NR=12.92, UR=NR*1.41, TR=0.20, NIR=0.08, NITH=242;
+const NIGHT_SAT_PCT=0.41, SUN_BH_PCT=0.83;
+let customRate=0; // 0 = not set, uses 12.92
+function applyCustomRate(){
+  NR=(customRate>0)?customRate:12.92;
+  UR=NR*(1+NIGHT_SAT_PCT);
+}
+const AL_START='2026-04-01'; // A/L accrual starts from this date
+const AL_RATE=0.1207;        // 12.07% of hours worked (NHS statutory: 5.6wks ÷ 46.4 working wks)
+const MONTHS=['January','February','March','April','May','June','July','August','September','October','November','December'];
+const MS=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const DS=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+let todos=[],events=[],bank=[],alLeave=[],filt='all',dPr=null,calY=new Date().getFullYear(),calM=new Date().getMonth(),calSel=null,selPW=null,salaryVisible=false;
+
+function load(){try{todos=JSON.parse(localStorage.getItem('a_todos')||'[]');events=JSON.parse(localStorage.getItem('a_events')||'[]');bank=JSON.parse(localStorage.getItem('a_bank')||'[]');alLeave=JSON.parse(localStorage.getItem('a_al')||'[]');customRate=parseFloat(localStorage.getItem('a_custom_rate')||'0');applyCustomRate();}catch(e){todos=[];events=[];bank=[];alLeave=[];customRate=0;}}
+function save(){try{localStorage.setItem('a_todos',JSON.stringify(todos));localStorage.setItem('a_events',JSON.stringify(events));localStorage.setItem('a_bank',JSON.stringify(bank));localStorage.setItem('a_al',JSON.stringify(alLeave));localStorage.setItem('a_custom_rate',customRate||0);}catch(e){}}
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function gbp(n){return '&#163;'+n.toFixed(2);}
+function waI(){return '<svg class="wai" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.553 4.112 1.522 5.836L.057 23.786a.5.5 0 0 0 .637.612l6.094-1.596A11.947 11.947 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.79 9.79 0 0 1-4.988-1.362l-.357-.212-3.701.97.987-3.608-.233-.37A9.791 9.791 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>';}
+
+window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();dPr=e;document.getElementById('install-banner').classList.add('show');});
+window.addEventListener('appinstalled',()=>{document.getElementById('install-banner').classList.remove('show');dPr=null;});
+function installApp(){if(dPr){dPr.prompt();dPr.userChoice.then(()=>{dPr=null;document.getElementById('install-banner').classList.remove('show');});}}
+function dismissBanner(){document.getElementById('install-banner').classList.remove('show');}
+if('serviceWorker' in navigator){try{const b=new Blob(['self.addEventListener("install",e=>self.skipWaiting());self.addEventListener("activate",e=>clients.claim());self.addEventListener("fetch",e=>{if(e.request.method!=="GET")return;e.respondWith(fetch(e.request).catch(()=>caches.match(e.request)));});'],{type:'application/javascript'});navigator.serviceWorker.register(URL.createObjectURL(b));}catch(e){}}
+
+function initHdr(){
+  const now=new Date(),h=now.getHours();
+  const g=h<12?'Good morning':h<17?'Good afternoon':'Good evening';
+  document.getElementById('today-chip').textContent=DS[now.getDay()]+', '+now.getDate()+' '+MS[now.getMonth()]+' '+now.getFullYear();
+  const ac=todos.filter(t=>!t.done).length,up=events.filter(e=>new Date(e.dt)>=now).length;
+  let msg=g+', Anand!';
+  if(ac>0||up>0){const p=[];if(ac>0)p.push(ac+' task'+(ac>1?'s':'')+' remaining');if(up>0)p.push(up+' event'+(up>1?'s':''));msg=p.join(' · ');}
+  else if(todos.length>0&&todos.every(t=>t.done))msg='All done, Anand! ';
+  document.getElementById('header-sub').textContent=msg;
+}
+
+function sw(p,el){
+  document.querySelectorAll('.pane').forEach(x=>x.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(x=>x.classList.remove('active'));
+  document.getElementById('p-'+p).classList.add('active');
+  el.classList.add('active');
+  if(p==='overview')renderOv();
+  if(p==='calendar')renderCal();
+  if(p==='bank')renderBank();
+  if(p==='prevweeks')renderPW();
+  if(p==='al')renderAL();
+  if(p==='settings')renderSettings();
+}
+function setF(f,el){filt=f;document.querySelectorAll('.fpill').forEach(b=>b.classList.remove('active'));el.classList.add('active');renderTodos();}
+
+// TODOS
+function addTodo(){const v=document.getElementById('todo-in').value.trim();if(!v)return;todos.unshift({id:Date.now(),text:v,cat:document.getElementById('todo-cat').value,done:false});document.getElementById('todo-in').value='';save();renderTodos();initHdr();}
+function togTodo(id){const t=todos.find(x=>x.id===id);if(t){t.done=!t.done;save();renderTodos();initHdr();}}
+function delTodo(id){todos=todos.filter(x=>x.id!==id);save();renderTodos();initHdr();}
+function renderTodos(){
+  const el=document.getElementById('todo-list');
+  let items=todos.filter(t=>{if(filt==='active')return !t.done;if(filt==='done')return t.done;if(filt==='urgent')return t.cat==='urgent'&&!t.done;if(filt==='work')return t.cat==='work'&&!t.done;return true;});
+  if(!items.length){el.innerHTML='<div class="empty"><span class="emptyicon">&#10003;</span>Nothing here - add a task!</div>';return;}
+  el.innerHTML=items.map(t=>'<div class="tcard '+(t.done?'done':'')+'"><div class="cbox '+(t.done?'chk':'')+'" onclick="togTodo('+t.id+')"></div><div class="tbody"><div class="ttitle">'+esc(t.text)+'</div><div class="tmeta"><span class="bdg '+t.cat+'">'+t.cat+'</span></div></div><div class="tact"><button class="wabtn" onclick="opWT('+t.id+')">'+waI()+' WA</button><button class="del" onclick="delTodo('+t.id+')">x</button></div></div>').join('');
+}
+
+// EVENTS
+function addEvent(){const t=document.getElementById('sch-in').value.trim();const dt=document.getElementById('sch-dt').value;if(!t||!dt)return;events.push({id:Date.now(),title:t,dt:dt,cat:document.getElementById('sch-cat').value});events.sort((a,b)=>new Date(a.dt)-new Date(b.dt));document.getElementById('sch-in').value='';document.getElementById('sch-dt').value='';save();renderEvents();initHdr();}
+function delEvent(id){events=events.filter(x=>x.id!==id);save();renderEvents();initHdr();renderCal();}
+function ftm(dt){return new Date(dt).toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'});}
+function fful(dt){const d=new Date(dt);return d.toLocaleDateString('en-GB',{weekday:'short',day:'numeric',month:'short'})+' at '+ftm(dt);}
+function renderEvents(){
+  const el=document.getElementById('sch-list');
+  if(!events.length){el.innerHTML='<div class="empty"><span class="emptyicon">&#128197;</span>No events yet!</div>';return;}
+  const now=new Date(),up=events.filter(e=>new Date(e.dt)>=now),past=events.filter(e=>new Date(e.dt)<now);
+  let html='';
+  if(up.length)html+='<div class="glbl">Upcoming</div>'+up.map(e=>evC(e,false)).join('');
+  if(past.length)html+='<div class="glbl">Past</div>'+past.map(e=>evC(e,true)).join('');
+  el.innerHTML=html;
+}
+function evC(e,past){
+  const d=new Date(e.dt);
+  return '<div class="evcard '+(past?'past':'')+'"><div class="evdtcol"><div class="evday">'+d.getDate()+'</div><div class="evmon">'+MS[d.getMonth()]+'</div></div><div class="evbody"><div class="evtitle">'+esc(e.title)+'</div><div class="evtrow"><span class="evtime">'+ftm(e.dt)+'</span><span class="bdg '+e.cat+'" style="font-size:10px">'+e.cat+'</span></div></div><div class="evact"><button class="wabtn" onclick="opWE('+e.id+')">'+waI()+' WA</button><button class="del" onclick="delEvent('+e.id+')">x</button></div></div>';
+}
+
+// CALENDAR
+function calPrev(){calM--;if(calM<0){calM=11;calY--;}renderCal();}
+function calNext(){calM++;if(calM>11){calM=0;calY++;}renderCal();}
+function renderCal(){
+  document.getElementById('cal-title').textContent=MONTHS[calM]+' '+calY;
+  const grid=document.getElementById('cal-grid'),today=new Date();
+  const fd=new Date(calY,calM,1).getDay(),dim=new Date(calY,calM+1,0).getDate(),pd=new Date(calY,calM,0).getDate();
+  const evD=new Set();events.forEach(e=>{const d=new Date(e.dt);if(d.getFullYear()===calY&&d.getMonth()===calM)evD.add(d.getDate());});
+  let h=DS.map(d=>'<div class="caldow">'+d+'</div>').join('');
+  for(let i=0;i<fd;i++)h+='<div class="calday om">'+(pd-fd+1+i)+'</div>';
+  for(let d=1;d<=dim;d++){
+    const iT=today.getDate()===d&&today.getMonth()===calM&&today.getFullYear()===calY;
+    const iS=calSel&&calSel.d===d&&calSel.m===calM&&calSel.y===calY;
+    const cls=['calday',iT?'td':'',iS?'sel':'',evD.has(d)?'hev':''].filter(Boolean).join(' ');
+    h+='<div class="'+cls+'" onclick="calSel2('+d+')">'+d+'</div>';
+  }
+  const rem=(fd+dim)%7===0?0:7-(fd+dim)%7;
+  for(let i=1;i<=rem;i++)h+='<div class="calday om">'+i+'</div>';
+  grid.innerHTML=h;renderCalP();
+}
+function calSel2(d){calSel={d,m:calM,y:calY};renderCal();}
+function renderCalP(){
+  const el=document.getElementById('cal-day-panel');
+  if(!calSel){el.innerHTML='';return;}
+  const{d,m,y}=calSel,dEvs=events.filter(e=>{const dt=new Date(e.dt);return dt.getDate()===d&&dt.getMonth()===m&&dt.getFullYear()===y;});
+  const lbl=new Date(y,m,d).toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long'});
+  let h='<div class="caldayp"><div class="caldayl">'+lbl+'</div>';
+  h+=dEvs.length?dEvs.map(e=>evC(e,new Date(e.dt)<new Date())).join(''):'<div style="font-size:13px;color:var(--text3)">No events this day</div>';
+  el.innerHTML=h+'</div>';
+}
+
+// PAY ENGINE
+function splitShift(from,to,dayType){
+  let s=toMin(from),e=toMin(to);
+  if(e<=s)e+=1440;
+  let nm=0,nsatMins=0,sunBHMins=0,cur=s;
+  while(cur<e){
+    const db=Math.floor(cur/1440)*1440,be=Math.min(e,db+1440);
+    const nextDay=Math.floor(cur/1440)>0;
+    let bd2=dayType||'weekday';
+    if(nextDay){
+      if(bd2==='saturday')bd2='sunday';
+      else if(bd2==='sunday'||bd2==='bankholiday')bd2='weekday';
+      else bd2='weekday';
+    }
+    if(bd2==='sunday'||bd2==='bankholiday'){
+      sunBHMins+=be-cur;cur=be;
+    } else if(bd2==='saturday'){
+      nsatMins+=be-cur;cur=be;
+    } else {
+      const ns=db+360,ne=db+1200;
+      if(cur<ns){const end=Math.min(ns,be);nsatMins+=end-cur;cur=end;}
+      if(cur<ne&&cur<be){const end=Math.min(ne,be);nm+=end-cur;cur=end;}
+      if(cur<be){nsatMins+=be-cur;cur=be;}
+    }
+  }
+  return{nm,nsatMins,sunBHMins,tm:nm+nsatMins+sunBHMins};
+}
+function toMin(t){const[h,m]=t.split(':').map(Number);return h*60+m;}
+function calcPay(nm,nsatMins,sunBHMins){
+  const np=(nm/60)*NR;
+  const nsp=(nsatMins/60)*(NR*(1+0.41));
+  const sbp=(sunBHMins/60)*(NR*(1+0.83));
+  const g=np+nsp+sbp;
+  return{np,nsp,sbp,g};
+}
+function calcTax(g){const tax=g*TR,ni=Math.max(0,g-NITH)*NIR,net=g-tax-ni;return{tax,ni,net};}
+function fmins(m){if(!m||m===0)return '0h';const h=Math.floor(m/60),min=m%60;if(h===0)return min+'m';if(min===0)return h+'h';return h+'h '+min+'m';}
+function fminsAL(hrs){if(!hrs||hrs===0)return '0h 0m';const totalMins=hrs*60,h=Math.floor(totalMins/60),m=Math.round(totalMins%60);if(h===0)return m+'m';if(m===0)return h+'h';return h+'h '+m+'m';}
+function tod(){const d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');}
+function wkBounds(off){
+  const now=new Date(),day=now.getDay();
+  const daysSinceMon=(day===0)?6:day-1;
+  const s=new Date(now);
+  s.setDate(now.getDate()-daysSinceMon+off*7);s.setHours(0,0,0,0);
+  const e=new Date(s);e.setDate(s.getDate()+6);e.setHours(23,59,59,999);
+  return{s,e};
+}
+function wkRange(s,e){return s.getDate()+' '+MS[s.getMonth()]+' - '+e.getDate()+' '+MS[e.getMonth()]+' '+e.getFullYear();}
+function wkEntries(s,e){return bank.filter(x=>{const d=new Date(x.date+'T00:00:00');return d>=s&&d<=e;});}
+function payDate(weekEnd){const d=new Date(weekEnd);d.setHours(12,0,0,0);d.setDate(d.getDate()+5);return d;}
+function fmtPayDate(d){return ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][d.getDay()]+' '+d.getDate()+' '+MS[d.getMonth()]+' '+d.getFullYear();}
+
+// SALARY TOGGLE
+function toggleSalary(){
+  salaryVisible=!salaryVisible;
+  applySalaryState();
+}
+function applySalaryState(){
+  const showTxt='&#128065; Show Salary', hideTxt='&#128274; Hide Salary';
+  // Bank Work tab toggle button
+  const btn=document.getElementById('sal-btn');
+  if(btn){
+    btn.innerHTML=salaryVisible?hideTxt:showTxt;
+    btn.className='sal-toggle-btn '+(salaryVisible?'hide':'show');
+    // Flip the logic: when hidden show the locked placeholder, when visible show the card
+    document.getElementById('pay-hidden').style.display=salaryVisible?'none':'block';
+    document.getElementById('pay-card-wrap').style.display=salaryVisible?'block':'none';
+  }
+  // Overview tab toggle button
+  const ovBtn=document.getElementById('ov-sal-btn');
+  if(ovBtn){
+    ovBtn.innerHTML=salaryVisible?'&#128274; Hide':'&#128065; Show';
+    ovBtn.className='sal-toggle-btn '+(salaryVisible?'hide':'show');
+    document.getElementById('ov-pay-hidden').style.display=salaryVisible?'none':'block';
+    document.getElementById('ov-pay-reveal').style.display=salaryVisible?'block':'none';
+  }
+  // Prev weeks - blur pay figures or show them
+  document.querySelectorAll('.pw-pay-section').forEach(el=>{
+    el.style.filter=salaryVisible?'none':'blur(6px)';
+    el.style.userSelect=salaryVisible?'auto':'none';
+    el.style.pointerEvents=salaryVisible?'auto':'none';
+  });
+  // Session list pay amounts in bank tab
+  document.querySelectorAll('.pay-sensitive').forEach(el=>{
+    el.style.filter=salaryVisible?'none':'blur(5px)';
+    el.style.userSelect=salaryVisible?'auto':'none';
+  });
+}
+
+// BANK WORK
+function addBankEntry(){
+  const dv=document.getElementById('bank-date').value,fv=document.getElementById('bank-from').value,tv=document.getElementById('bank-to').value,nv=document.getElementById('bank-note').value.trim();
+  const dtype=document.getElementById('bank-daytype')?document.getElementById('bank-daytype').value:'weekday';
+  if(!dv||!fv||!tv){alert('Please fill date, from and to times.');return;}
+  const sp=splitShift(fv,tv,dtype);
+  if(sp.tm<=0){alert('Check your times.');return;}
+
+  // Duplicate check
+  const dup=bank.find(x=>x.date===dv&&x.from===fv&&x.to===tv);
+  if(dup){
+    const status=document.getElementById('ql-status');
+    if(status){
+      status.style.color='#ffcc00';
+      status.textContent='\u26a0\ufe0f Duplicate — '+fv+'\u2013'+tv+' on this date already exists. Not saved.';
+      setTimeout(()=>{status.textContent='';status.style.color='rgba(255,255,255,.85)';},4000);
+    }
+    return;
+  }
+
+  const p=calcPay(sp.nm,sp.nsatMins,sp.sunBHMins);
+  bank.unshift({id:Date.now(),date:dv,from:fv,to:tv,note:nv,dayType:dtype,nm:sp.nm,nsatMins:sp.nsatMins,sunBHMins:sp.sunBHMins,tm:sp.tm,np:p.np,nsp:p.nsp,sbp:p.sbp,g:p.g});
+  document.getElementById('bank-from').value='';document.getElementById('bank-to').value='';document.getElementById('bank-note').value='';
+  save();renderBank();
+}
+function delBank(id){bank=bank.filter(x=>x.id!==id);save();renderBank();renderPW();}
+function delBankPW(id){if(!confirm('Delete this session?'))return;bank=bank.filter(x=>x.id!==id);save();renderBank();renderPW();}
+
+function renderBank(){
+  const{s,e}=wkBounds(0),we=wkEntries(s,e);
+  // backward compat: old entries used nm/um
+  const wnm=we.reduce((a,x)=>a+(x.nm||0),0);
+  const wnsatMins=we.reduce((a,x)=>a+(x.nsatMins!==undefined?x.nsatMins:(x.um||0)),0);
+  const wsunBHMins=we.reduce((a,x)=>a+(x.sunBHMins||0),0);
+  const wtm=we.reduce((a,x)=>a+x.tm,0);
+  const wg=we.reduce((a,x)=>a+x.g,0);
+  const wnp=we.reduce((a,x)=>a+(x.np||0),0);
+  const wnsp=we.reduce((a,x)=>a+(x.nsp||(x.up||0)),0);
+  const wsbp=we.reduce((a,x)=>a+(x.sbp||0),0);
+  const{tax,ni,net}=calcTax(wg);
+  const tdM=bank.filter(x=>x.date===tod()).reduce((a,x)=>a+x.tm,0);
+  const allM=bank.reduce((a,x)=>a+x.tm,0);
+  const pd=payDate(e);
+
+  document.getElementById('bank-cur-range').textContent=wkRange(s,e);
+  document.getElementById('bank-cur-hrs').textContent=fmins(wtm);
+  document.getElementById('bank-cur-sess').textContent=we.length+' session'+(we.length!==1?'s':'')+' \u00b7 Pay: '+fmtPayDate(pd);
+  document.getElementById('bank-prog').style.width=Math.min(100,Math.round(wtm/(40*60)*100))+'%';
+
+  document.getElementById('pnh').textContent=fmins(wnm)+' x \u00a3'+NR.toFixed(2)+'/hr';
+  document.getElementById('pna').innerHTML='~'+gbp(wnp);
+  document.getElementById('puh').textContent=fmins(wnsatMins)+' x \u00a3'+(NR*(1+0.41)).toFixed(2)+'/hr (+41%)';
+  document.getElementById('pua').innerHTML='~'+gbp(wnsp);
+  // Sun/BH row
+  const sunRow=document.getElementById('p-sun-row-main');
+  if(sunRow){sunRow.style.display=wsunBHMins>0?'flex':'none';}
+  const sunH=document.getElementById('psunh');if(sunH)sunH.textContent=fmins(wsunBHMins)+' x \u00a3'+(NR*(1+0.83)).toFixed(2)+'/hr (+83%)';
+  const sunA=document.getElementById('psuna');if(sunA)sunA.innerHTML='~'+gbp(wsbp);
+  document.getElementById('pgross').innerHTML='~'+gbp(wg);
+  document.getElementById('ptax').innerHTML='~-'+gbp(tax);
+  document.getElementById('pni').innerHTML='~-'+gbp(ni);
+  document.getElementById('pnet').innerHTML='~'+gbp(net);
+
+  document.getElementById('bms-today').textContent=tdM?fmins(tdM):'0h';
+  document.getElementById('bms-all').textContent=allM?fmins(allM):'0h';
+  document.getElementById('bms-sess').textContent=bank.length;
+
+  // Auto day type from date
+  if(!document.getElementById('bank-date').value){
+    document.getElementById('bank-date').value=tod();
+    const day=new Date().getDay();
+    const dtSel=document.getElementById('bank-daytype');
+    if(dtSel){if(day===0)dtSel.value='sunday';else if(day===6)dtSel.value='saturday';else dtSel.value='weekday';}
+  }
+
+  const lel=document.getElementById('bank-cur-list');
+  if(!we.length){lel.innerHTML='<div class="empty"><span class="emptyicon">&#127974;</span>No sessions logged this week yet</div>';return;}
+  const bd={};we.forEach(x=>{if(!bd[x.date])bd[x.date]=[];bd[x.date].push(x);});
+  let h='<div class="glbl">This week\'s sessions</div>';
+  Object.keys(bd).sort((a,b)=>b.localeCompare(a)).forEach(date=>{
+    const d=new Date(date+'T00:00:00'),dm=bd[date].reduce((a,x)=>a+x.tm,0),dg=bd[date].reduce((a,x)=>a+x.g,0);
+    h+='<div style="font-size:11px;font-weight:600;color:var(--text3);margin:.75rem 0 .4rem;text-transform:uppercase;letter-spacing:.06em">'+DS[d.getDay()]+', '+d.getDate()+' '+MS[d.getMonth()]+' <span style="color:var(--bank)">'+fmins(dm)+' \u00b7 ';
+    h+=gbp(dg)+' gross</span></div>';
+    bd[date].forEach(x=>{
+      const nsM=x.nsatMins!==undefined?x.nsatMins:(x.um||0),sbM=x.sunBHMins||0;
+      const dtype=x.dayType||'weekday';
+      const dtLabel={'weekday':'Weekday','saturday':'Saturday','sunday':'Sunday','bankholiday':'Bank Holiday'}[dtype]||dtype;
+      h+='<div class="bentry"><div class="bentryrow"><div class="bentryicon">&#127974;</div><div class="bentrybody"><div class="bentryhrs">'+fmins(x.tm)+'&nbsp;<span class="pay-sensitive" style="font-size:12px;color:var(--bank);font-weight:600">'+gbp(x.g)+' gross</span></div>';
+      h+='<div class="bentrydet">'+x.from+' \u2192 '+x.to+' \u00b7 <em>'+dtLabel+'</em>'+(x.note?' \u00b7 '+esc(x.note):'')+'</div>';
+      h+='<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:3px">';
+      if(x.nm>0)h+='<span style="color:#1a7a45;font-size:11px">\u2600 '+fmins(x.nm)+' normal</span>';
+      if(nsM>0)h+='<span style="color:#c4521a;font-size:11px">\u{1F319} '+fmins(nsM)+' night/Sat</span>';
+      if(sbM>0)h+='<span style="background:#fff3e0;color:#b45309;font-size:11px;padding:1px 5px;border-radius:4px">\u2609 '+fmins(sbM)+' Sun/BH</span>';
+      h+='</div></div><button class="del" onclick="delBank('+x.id+')">x</button></div></div>';
+    });
+  });
+  lel.innerHTML=h;
+  applySalaryState();
+}
+
+// PREVIOUS WEEKS — shows ALL weeks with bank entries
+function renderPW(){
+  const wm={};
+  bank.forEach(x=>{
+    const d=new Date(x.date+'T00:00:00'),day=d.getDay();
+    const daysSinceMon=(day===0)?6:day-1;
+    const mon=new Date(d);mon.setDate(d.getDate()-daysSinceMon);mon.setHours(0,0,0,0);
+    const k=mon.toISOString().slice(0,10);
+    if(!wm[k])wm[k]={start:new Date(mon),entries:[]};
+    wm[k].entries.push(x);
+  });
+  const{s:cs}=wkBounds(0),ck=cs.toISOString().slice(0,10);
+  const keys=Object.keys(wm).sort((a,b)=>b.localeCompare(a));
+  if(!keys.length){
+    document.getElementById('prev-selector').innerHTML='<div class="empty"><span class="emptyicon">&#128203;</span>No bank sessions logged yet</div>';
+    document.getElementById('prev-detail').innerHTML='';
+    return;
+  }
+  if(!selPW||!wm[selPW])selPW=keys[0];
+
+  // Group by month
+  const mm={};
+  keys.forEach(k=>{const mk=k.slice(0,7);if(!mm[mk])mm[mk]=[];mm[mk].push(k);});
+  const mkeys=Object.keys(mm).sort((a,b)=>b.localeCompare(a));
+  const curMonth=ck.slice(0,7);
+
+  let sh='<div class="glbl">All weeks ('+keys.length+' across '+mkeys.length+' month'+(mkeys.length!==1?'s':'')+')</div>';
+
+  mkeys.forEach(mk=>{
+    const d0=new Date(mk+'-01');
+    const moLabel=MONTHS[d0.getMonth()]+' '+d0.getFullYear();
+    const isCurrentMo=mk===curMonth;
+    const moKeys=mm[mk];
+    const moSessions=moKeys.reduce((a,k)=>a+wm[k].entries.length,0);
+    const moMins=moKeys.reduce((a,k)=>a+wm[k].entries.reduce((b,x)=>b+x.tm,0),0);
+    const moGross=moKeys.reduce((a,k)=>a+wm[k].entries.reduce((b,x)=>b+x.g,0),0);
+    const{net:moNet}=calcTax(moGross);
+
+    sh+='<details class="mo-accordion"'+(isCurrentMo?' open':'')+' id="mo-'+mk+'">';
+    sh+='<summary class="mo-summary">';
+    sh+='<div><div class="mo-title">'+moLabel+(isCurrentMo?' <span style="font-size:10px;background:#c4521a;color:#fff;border-radius:4px;padding:1px 6px;margin-left:5px;vertical-align:middle">current</span>':'')+'</div>';
+    sh+='<div class="mo-meta">'+moSessions+' session'+(moSessions!==1?'s':'')+' &middot; '+fmins(moMins)+'</div></div>';
+    sh+='<div class="mo-right"><div class="mo-total">~'+gbp(moNet)+'</div><div style="font-size:10px;color:var(--text3)">take-home</div></div>';
+    sh+='<span class="mo-arrow">&#9660;</span>';
+    sh+='</summary>';
+
+    moKeys.forEach(k=>{
+      const ws=wm[k].start,we=new Date(ws);we.setDate(ws.getDate()+6);
+      const en=wm[k].entries,wt=en.reduce((a,x)=>a+x.tm,0),wg=en.reduce((a,x)=>a+x.g,0),{net}=calcTax(wg);
+      const isCur=k===ck;
+      const pd=payDate(we);
+      const curLabel=isCur?'<span style="font-size:10px;background:#c4521a;color:#fff;border-radius:4px;padding:1px 6px;margin-left:6px;vertical-align:middle">current</span>':'';
+      sh+='<div class="wkselitem '+(k===selPW?'selwk':'')+'" onclick="selW(\''+k+'\')">';
+      sh+='<div><div class="wksellbl">'+ws.getDate()+' '+MS[ws.getMonth()]+' &ndash; '+we.getDate()+' '+MS[we.getMonth()]+curLabel+'</div>';
+      sh+='<div class="wkselsub">'+en.length+' session'+(en.length!==1?'s':'')+' &middot; '+fmins(wt)+' &middot; Pay: '+pd.getDate()+' '+MS[pd.getMonth()]+'</div></div>';
+      sh+='<div class="wkselval"><div class="wkselhrs">~'+gbp(net)+'</div><div style="font-size:10px;color:var(--text3)">approx</div></div></div>';
+    });
+    sh+='</details>';
+  });
+
+  document.getElementById('prev-selector').innerHTML=sh;
+  renderPWDetail(selPW,wm[selPW]);
+}
+function selW(k){selPW=k;renderPW();}
+function renderPWDetail(k,wd){
+  const ws=wd.start,we=new Date(ws);we.setDate(ws.getDate()+6);
+  const en=wd.entries.slice().sort((a,b)=>b.date.localeCompare(a.date));
+  const wnm=en.reduce((a,x)=>a+(x.nm||0),0);
+  const wnsatMins=en.reduce((a,x)=>a+(x.nsatMins!==undefined?x.nsatMins:(x.um||0)),0);
+  const wsunBHMins=en.reduce((a,x)=>a+(x.sunBHMins||0),0);
+  const wtm=en.reduce((a,x)=>a+x.tm,0);
+  const wnp=en.reduce((a,x)=>a+(x.np||0),0);
+  const wnsp=en.reduce((a,x)=>a+(x.nsp||(x.up||0)),0);
+  const wsbp=en.reduce((a,x)=>a+(x.sbp||0),0);
+  const wg=en.reduce((a,x)=>a+x.g,0);
+  const{tax,ni,net}=calcTax(wg);
+  const alEligMins=en.filter(x=>x.date>=AL_START).reduce((a,x)=>a+x.tm,0);
+  const alEarned=alEligMins*(AL_RATE/60);
+  const pd=payDate(we);
+  const pdNow=new Date();pdNow.setHours(0,0,0,0);
+  const pdLabel=pd>=pdNow?'Pay date: '+fmtPayDate(pd):'Paid: '+fmtPayDate(pd);
+
+  let h='<div class="glbl" style="margin-top:1.25rem">'+ws.getDate()+' '+MS[ws.getMonth()]+' &ndash; '+we.getDate()+' '+MS[we.getMonth()]+' '+we.getFullYear()+'</div>';
+  h+='<div style="background:#edf2ff;border:1px solid #dce8ff;border-radius:var(--radius-sm);padding:8px 13px;margin-bottom:.75rem;display:flex;align-items:center;justify-content:space-between">';
+  h+='<span style="font-size:13px;color:var(--bank)">&#128197; '+pdLabel+'</span>';
+  h+='<span style="font-size:11px;color:var(--text3)">next Friday</span></div>';
+  h+='<div class="pw-pay-section">';
+  h+='<div class="paycard"><div class="payctitle">Approx Pay Breakdown</div>';
+  h+='<div style="font-size:11px;color:var(--text3);margin-bottom:.6rem">&#8505; Estimated &mdash; actual pay may differ slightly</div>';
+  h+='<div class="payrow"><div class="payrlbl">Normal hours<small>'+fmins(wnm)+' x &pound;'+NR.toFixed(2)+'/hr</small></div><div class="payRval">~'+gbp(wnp)+'</div></div>';
+  if(wnsatMins>0)h+='<div class="payrow"><div class="payrlbl">Night / Saturday<small>'+fmins(wnsatMins)+' x £'+(NR*1.41).toFixed(2)+'/hr</small></div><div class="payRval">~'+gbp(wnsp)+'</div></div>';
+  if(wsunBHMins>0)h+='<div class="payrow"><div class="payrlbl">Sunday / Bank Holiday<small>'+fmins(wsunBHMins)+' x £'+(NR*1.83).toFixed(2)+'/hr</small></div><div class="payRval" style="color:#b45309">~'+gbp(wsbp)+'</div></div>';
+  h+='<div class="payrow"><div class="payrlbl">Gross pay &nbsp;<span style="font-size:11px;color:var(--text3)">'+fmins(wtm)+'</span></div><div class="payRval">~'+gbp(wg)+'</div></div>';
+  h+='<div class="payrow"><div class="payrlbl">Income tax (20%)<small>Basic rate</small></div><div class="payRval neg">~-'+gbp(tax)+'</div></div>';
+  h+='<div class="payrow"><div class="payrlbl">NI (8%)<small>Above &pound;242/wk</small></div><div class="payRval neg">~-'+gbp(ni)+'</div></div>';
+  h+='<div class="paytotal"><div class="paytlbl">Approx take-home</div><div class="paytval">~'+gbp(net)+'</div></div></div>';
+  // AL earned badge
+  if(alEarned>0){
+    h+='<div style="background:#edfff4;border:1px solid #c0ddc8;border-radius:var(--radius);padding:.75rem 1rem;margin-bottom:1rem;display:flex;justify-content:space-between;align-items:center">';
+    h+='<div style="font-size:13px;color:#1a4a2a">&#127334; Annual leave earned this week</div>';
+    h+='<div style="font-family:\'DM Serif Display\',serif;font-size:1.1rem;color:#1a7a45">+'+fminsAL(alEarned)+'</div></div>';
+  }
+  h+='</div>'; // close pw-pay-section
+  h+='<div class="glbl">Sessions</div>';
+  const bd={};en.forEach(x=>{if(!bd[x.date])bd[x.date]=[];bd[x.date].push(x);});
+  Object.keys(bd).sort((a,b)=>b.localeCompare(a)).forEach(date=>{
+    const d=new Date(date+'T00:00:00'),dm=bd[date].reduce((a,x)=>a+x.tm,0),dg=bd[date].reduce((a,x)=>a+x.g,0);
+    h+='<div style="font-size:11px;font-weight:600;color:var(--text3);margin:.6rem 0 .4rem;text-transform:uppercase;letter-spacing:.06em">'+DS[d.getDay()]+', '+d.getDate()+' '+MS[d.getMonth()]+' <span style="color:var(--bank)">'+fmins(dm)+' &middot; '+gbp(dg)+'</span></div>';
+    bd[date].forEach(x=>{
+      h+='<div class="bentry"><div class="bentryrow"><div class="bentryicon">&#127974;</div><div class="bentrybody"><div class="bentryhrs">'+fmins(x.tm)+'&nbsp;<span style="font-size:12px;color:var(--bank);font-weight:600">'+gbp(x.g)+' gross</span></div>';
+      h+='<div class="bentrydet">'+x.from+' &#8594; '+x.to+(x.note?' &middot; '+esc(x.note):'')+'</div>';
+      h+='<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:3px">';
+      if(x.nm>0)h+='<span style="color:#1a7a45;font-size:11px">&#9728; '+fmins(x.nm)+' normal</span>';
+      const nsM2=x.nsatMins!==undefined?x.nsatMins:(x.um||0),sbM2=x.sunBHMins||0;
+      const dtLabel2={weekday:'Weekday',saturday:'Saturday',sunday:'Sunday',bankholiday:'Bank Holiday'}[x.dayType||'weekday']||'Weekday';
+      if(x.nm>0)h+='<span style="color:#1a7a45;font-size:11px">☀ '+fmins(x.nm)+' normal</span>';
+      if(nsM2>0)h+='<span style="color:#c4521a;font-size:11px">🌙 '+fmins(nsM2)+' night/Sat</span>';
+      if(sbM2>0)h+='<span style="background:#fff3e0;color:#b45309;font-size:11px;padding:1px 5px;border-radius:4px">&#9737; '+fmins(sbM2)+' Sun/BH</span>';
+      h+='</div></div>';
+      h+='<button class="del" onclick="delBankPW('+x.id+')" title="Delete session">&#215;</button>';
+      h+='</div></div>';
+    });
+  });
+  document.getElementById('prev-detail').innerHTML=h;
+  applySalaryState();
+}
+
+// ANNUAL LEAVE FUNCTIONS
+
+function alBankMins(){
+  // Only count bank hours from April 1 2026 onwards
+  return bank.filter(x=>x.date>=AL_START).reduce((a,x)=>a+x.tm,0);
+}
+function alAccrued(){
+  // 12.07% of hours worked (NHS statutory rate)
+  return alBankMins() * (AL_RATE / 60);
+}
+function alTaken(){
+  // Both annual leave AND cash-in reduce the balance
+  return alLeave.filter(x=>x.type==='annual'||x.type==='cashin').reduce((a,x)=>a+x.hours,0);
+}
+function alOtherAbsence(){
+  return alLeave.filter(x=>x.type!=='annual'&&x.type!=='cashin').reduce((a,x)=>a+x.hours,0);
+}
+function alBalance(){
+  return Math.max(0, alAccrued() - alTaken());
+}
+function alCashTotal(){
+  return alLeave.filter(x=>x.type==='cashin').reduce((a,x)=>a+(x.cashPay||0),0);
+}
+// Cash-in pay date: before Sunday noon = this week's Friday; Sunday noon or after = next week's Friday
+function cashInPayDate(requestedAt){
+  const d=new Date(requestedAt);
+  const isSun=d.getDay()===0;
+  const afterNoon=isSun&&d.getHours()>=12;
+  const day=d.getDay(),daysSinceMon=(day===0)?6:day-1;
+  const mon=new Date(d);mon.setDate(d.getDate()-daysSinceMon+(afterNoon?7:0));mon.setHours(12,0,0,0);
+  const sun=new Date(mon);sun.setDate(mon.getDate()+6);
+  const fri=new Date(sun);fri.setDate(sun.getDate()+5);
+  return fri;
+}
+
+function addAL(){
+  const dv=document.getElementById('al-date').value;
+  const hv=parseFloat(document.getElementById('al-hours').value);
+  const tv=document.getElementById('al-type').value;
+  const nv=document.getElementById('al-note').value.trim();
+  if(!dv){document.getElementById('al-date').focus();return;}
+  if(!hv||hv<=0){document.getElementById('al-hours').focus();return;}
+  const bal=alBalance();
+  if((tv==='annual'||tv==='cashin')&&hv>bal+0.0001){
+    alert('Not enough A/L balance.\n\nYou have '+fminsAL(bal)+' available but tried to log '+fminsAL(hv)+'.\n\nPlease enter '+fminsAL(bal)+' or less.');
+    return;
+  }
+  const entry={id:Date.now(),date:dv,hours:hv,type:tv,note:nv};
+  if(tv==='cashin'){
+    const now=new Date();
+    entry.cashPay=hv*NR;
+    entry.requestedAt=now.toISOString();
+    entry.cashPayDate=cashInPayDate(now).toISOString().slice(0,10);
+  }
+  alLeave.unshift(entry);
+  document.getElementById('al-date').value='';
+  document.getElementById('al-hours').value='';
+  document.getElementById('al-note').value='';
+  save();renderAL();
+}
+function delAL(id){alLeave=alLeave.filter(x=>x.id!==id);save();renderAL();}
+
+function renderAL(){
+  const bankMins=alBankMins();
+  const accrued=alAccrued();
+  const taken=alTaken();
+  const bal=Math.max(0,accrued-taken);
+  const pct=accrued>0?Math.min(100,Math.round((taken/accrued)*100)):0;
+  const takenOnly=alLeave.filter(x=>x.type==='annual').reduce((a,x)=>a+x.hours,0);
+  const cashHrs=alLeave.filter(x=>x.type==='cashin').reduce((a,x)=>a+x.hours,0);
+
+  document.getElementById('al-balance').textContent=fminsAL(bal);
+  document.getElementById('al-bal-sub').textContent=fminsAL(accrued)+' accrued \u2212 '+fminsAL(taken)+' used';
+  document.getElementById('al-prog').style.width=pct+'%';
+  document.getElementById('al-bankhrs').textContent=fmins(bankMins);
+  document.getElementById('al-accrued').textContent=fminsAL(accrued);
+  document.getElementById('al-taken').textContent=fminsAL(taken);
+
+  if(!document.getElementById('al-date').value)document.getElementById('al-date').value=tod();
+
+  const lel=document.getElementById('al-list');
+  if(!alLeave.length&&bankMins===0){
+    lel.innerHTML='<div class="empty"><span class="emptyicon">&#127334;</span>No bank hours logged from 1 Apr 2026 yet.<br><span style="font-size:12px">Log bank work sessions to start accruing leave!</span></div>';
+    return;
+  }
+
+  const byMonth={};
+  bank.filter(x=>x.date>=AL_START).forEach(x=>{
+    const k=x.date.slice(0,7);
+    if(!byMonth[k])byMonth[k]=0;
+    byMonth[k]+=x.tm;
+  });
+
+  let h='';
+
+  if(Object.keys(byMonth).length){
+    h+='<div class="glbl">Accrual breakdown (from 1 Apr 2026)</div>';
+    h+='<div style="background:var(--surface);border:1px solid #c0ddc8;border-radius:var(--radius);overflow:hidden;margin-bottom:1rem">';
+    let runTotal=0;
+    Object.keys(byMonth).sort().forEach(mo=>{
+      const d=new Date(mo+'-01'),mMins=byMonth[mo],mAccr=mMins*(AL_RATE/60);
+      runTotal+=mAccr;
+      h+='<div style="display:flex;justify-content:space-between;align-items:center;padding:10px 13px;border-bottom:.5px solid var(--border)">';
+      h+='<div><div style="font-size:14px;font-weight:500">'+MONTHS[d.getMonth()]+' '+d.getFullYear()+'</div>';
+      h+='<div style="font-size:12px;color:var(--text3)">'+fmins(mMins)+' worked</div></div>';
+      h+='<div style="text-align:right"><div style="font-family:\'DM Serif Display\',serif;font-size:1rem;color:#1a7a45">+'+fminsAL(mAccr)+'</div>';
+      h+='<div style="font-size:11px;color:var(--text3)">Running: '+fminsAL(runTotal)+'</div></div></div>';
+    });
+    h+='<div style="display:flex;justify-content:space-between;align-items:center;padding:10px 13px;background:#edfff4">';
+    h+='<div style="font-size:13px;font-weight:600;color:#1a7a45">Total accrued</div>';
+    h+='<div style="font-family:\'DM Serif Display\',serif;font-size:1.1rem;color:#1a7a45">'+fminsAL(accrued)+'</div></div>';
+    h+='</div>';
+  }
+
+  if(alLeave.length){
+    const alCash=alLeave.filter(x=>x.type==='cashin');
+    const alOnly=alLeave.filter(x=>x.type==='annual');
+    const otherLeave=alLeave.filter(x=>x.type!=='annual'&&x.type!=='cashin');
+
+    if(alCash.length){
+      const cashSum=alCash.reduce((a,x)=>a+(x.cashPay||0),0);
+      h+='<div class="glbl">A/L Cashed In</div>';
+      h+='<div style="background:#edf2ff;border:1px solid #dce8ff;border-radius:var(--radius);padding:.75rem 1rem;margin-bottom:.75rem;display:flex;justify-content:space-between;align-items:center">';
+      h+='<div style="font-size:13px;color:var(--bank)">&#128184; Total: '+fminsAL(alCash.reduce((a,x)=>a+x.hours,0))+'</div>';
+      h+='<div style="font-family:\'DM Serif Display\',serif;font-size:1.1rem;color:var(--bank)">~'+gbp(cashSum)+'</div></div>';
+      alCash.forEach(x=>{
+        const d=new Date(x.date+'T00:00:00');
+        const pay=x.cashPay||x.hours*NR;
+        let pdStr='';
+        if(x.cashPayDate){
+          const pd=new Date(x.cashPayDate+'T00:00:00');
+          const today=new Date();today.setHours(0,0,0,0);
+          const isPast=pd<today;
+          pdStr='<div style="font-size:12px;'+(isPast?'color:var(--text3)':'color:var(--bank);font-weight:600')+';margin-top:3px">'+(isPast?'&#10003; Paid on: ':'&#128197; Pay date: ')+DS[pd.getDay()]+' '+pd.getDate()+' '+MS[pd.getMonth()]+' '+pd.getFullYear()+'</div>';
+        }
+        h+='<div class="alentry"><div class="alentry-icon" style="background:#edf2ff">&#128184;</div>';
+        h+='<div class="alentry-body"><div class="alentry-hrs" style="color:var(--bank)">'+fminsAL(x.hours)+' cashed in &nbsp;<span style="font-size:12px;font-weight:600">~'+gbp(pay)+'</span></div>';
+        h+='<div class="alentry-det">Requested: '+DS[d.getDay()]+', '+d.getDate()+' '+MS[d.getMonth()]+' '+d.getFullYear()+'</div>';
+        h+='<div style="font-size:11px;color:var(--text3);margin-top:1px">'+x.hours+' hrs \u00d7 \u00a3'+NR.toFixed(2)+'/hr</div>';
+        h+=pdStr;
+        if(x.note)h+='<div style="font-size:11px;color:var(--text3)">'+esc(x.note)+'</div>';
+        h+='</div><button class="del" onclick="delAL('+x.id+')">x</button></div>';
+      });
+    }
+
+    if(alOnly.length){
+      h+='<div class="glbl">A/L Taken (time off)</div>';
+      alOnly.forEach(x=>{
+        const d=new Date(x.date+'T00:00:00');
+        h+='<div class="alentry"><div class="alentry-icon taken">&#127334;</div>';
+        h+='<div class="alentry-body"><div class="alentry-hrs taken">'+fminsAL(x.hours)+' taken</div>';
+        h+='<div class="alentry-det">'+DS[d.getDay()]+', '+d.getDate()+' '+MS[d.getMonth()]+' '+d.getFullYear()+(x.note?' &middot; '+esc(x.note):'')+'</div></div>';
+        h+='<button class="del" onclick="delAL('+x.id+')">x</button></div>';
+      });
+    }
+
+    if(otherLeave.length){
+      h+='<div class="glbl">Other absences (for reference only)</div>';
+      otherLeave.forEach(x=>{
+        const d=new Date(x.date+'T00:00:00');
+        const icon=x.type==='sick'?'&#129298;':'&#128197;';
+        h+='<div class="alentry"><div class="alentry-icon">'+icon+'</div>';
+        h+='<div class="alentry-body"><div class="alentry-hrs" style="color:var(--text2)">'+fminsAL(x.hours)+' <span style="font-size:11px;color:var(--text3)">('+x.type+')</span></div>';
+        h+='<div class="alentry-det">'+DS[d.getDay()]+', '+d.getDate()+' '+MS[d.getMonth()]+' '+d.getFullYear()+(x.note?' &middot; '+esc(x.note):'')+'</div></div>';
+        h+='<button class="del" onclick="delAL('+x.id+')">x</button></div>';
+      });
+    }
+  } else if(bankMins>0){
+    h+='<div class="empty" style="padding:1.5rem 1rem"><span style="font-size:1.5rem;display:block;margin-bottom:.5rem">&#127334;</span>No leave logged yet</div>';
+  }
+
+  lel.innerHTML=h;
+}
+
+// SETTINGS
+function renderSettings(){
+  const el=document.getElementById('st-name-display');
+  if(el)el.textContent=localStorage.getItem('a_name')||'Anand';
+  // Update rate display cards
+  const nr=document.getElementById('sch-st-nr');if(nr)nr.textContent='\u00a3'+NR.toFixed(2)+'/hr';
+  const ur=document.getElementById('sch-st-ur');if(ur)ur.textContent='\u00a3'+(NR*(1+NIGHT_SAT_PCT)).toFixed(2)+'/hr';
+  const sun=document.getElementById('sch-st-sun');if(sun)sun.textContent='\u00a3'+(NR*(1+SUN_BH_PCT)).toFixed(2)+'/hr';
+  // Custom rate input
+  const crInput=document.getElementById('st-custom-rate');
+  const crStatus=document.getElementById('st-custom-rate-status');
+  if(crInput)crInput.value=customRate>0?customRate:'';
+  if(crStatus&&customRate>0){
+    crStatus.style.display='block';crStatus.style.color='var(--bank)';
+    crStatus.textContent='\u26a0\ufe0f Custom rate active: \u00a3'+NR.toFixed(2)+'/hr \u00b7 Night/Sat: \u00a3'+(NR*(1+NIGHT_SAT_PCT)).toFixed(2)+' \u00b7 Sun/BH: \u00a3'+(NR*(1+SUN_BH_PCT)).toFixed(2);
+  } else if(crStatus){crStatus.style.display='none';}
+  populatePDFMonthSelector();
+}
+function saveCustomRate(){
+  const val=parseFloat(document.getElementById('st-custom-rate').value);
+  const status=document.getElementById('st-custom-rate-status');
+  if(!val||val<8||val>150){
+    status.style.display='block';status.style.color='var(--red)';
+    status.textContent='Please enter a valid hourly rate between \u00a38 and \u00a3150.';return;
+  }
+  customRate=val;save();applyCustomRate();
+  renderBank();renderSettings();
+  status.style.display='block';status.style.color='var(--green)';
+  status.textContent='\u2705 Rate \u00a3'+val.toFixed(2)+'/hr applied! Night/Sat: \u00a3'+(val*(1+NIGHT_SAT_PCT)).toFixed(2)+' \u00b7 Sun/BH: \u00a3'+(val*(1+SUN_BH_PCT)).toFixed(2);
+}
+function clearCustomRate(){
+  customRate=0;document.getElementById('st-custom-rate').value='';
+  save();applyCustomRate();renderBank();renderSettings();
+  const s=document.getElementById('st-custom-rate-status');
+  s.style.display='block';s.style.color='var(--text3)';
+  s.textContent='Custom rate cleared. Using standard rate: \u00a3'+NR.toFixed(2)+'/hr';
+}
+function stEditName(){
+  const current=localStorage.getItem('a_name')||'Anand';
+  const n=prompt('Enter your name:',current);
+  if(n&&n.trim()){
+    localStorage.setItem('a_name',n.trim());
+    const hdr=document.getElementById('app-user-name');
+    if(hdr)hdr.textContent=n.trim();
+    renderSettings();
+  }
+}
+
+// WHATSAPP
+function opWT(id){const t=todos.find(x=>x.id===id);if(!t)return;document.getElementById('wa-msg').value='Task Reminder - Anand\n\n'+t.text+'\nCategory: '+t.cat+'\n\nSent from Anands Planner';document.getElementById('wa-modal').classList.add('open');}
+function opWE(id){const e=events.find(x=>x.id===id);if(!e)return;document.getElementById('wa-msg').value='Event Reminder - Anand\n\n'+e.title+'\n'+fful(e.dt)+'\nCategory: '+e.cat+'\n\nSent from Anands Planner';document.getElementById('wa-modal').classList.add('open');}
+function closeWa(e){if(!e||e.target===document.getElementById('wa-modal'))document.getElementById('wa-modal').classList.remove('open');}
+function sendWa(){const msg=document.getElementById('wa-msg').value;window.open('https://wa.me/?text='+encodeURIComponent(msg),'_blank');document.getElementById('wa-modal').classList.remove('open');}
+
+// OVERVIEW
+function renderOv(){
+  const now=new Date(),dn=todos.filter(t=>t.done).length,tot=todos.length,up=events.filter(e=>new Date(e.dt)>=now);
+  const pct=tot>0?Math.round((dn/tot)*100):0;
+  document.getElementById('ov-total').textContent=tot;document.getElementById('ov-done').textContent=dn;document.getElementById('ov-ev').textContent=up.length;
+  document.getElementById('ov-pct').textContent=pct+'%';document.getElementById('ov-bar').style.width=pct+'%';
+  const{s,e}=wkBounds(0),we=wkEntries(s,e),wtm=we.reduce((a,x)=>a+x.tm,0),wg=we.reduce((a,x)=>a+x.g,0),{net}=calcTax(wg);
+  document.getElementById('ov-hrs').textContent=fmins(wtm)||'0h';
+  document.getElementById('ov-gross').innerHTML='~'+gbp(wg);
+  document.getElementById('ov-net').innerHTML='~'+gbp(net);
+  // AL stats in overview
+  const alBM=alBankMins(),alAcc=alAccrued(),alTkn=alTaken(),alBal=Math.max(0,alAcc-alTkn);
+  const alCashHrs=alLeave.filter(x=>x.type==='cashin').reduce((a,x)=>a+x.hours,0);
+  const alCashPay=alCashTotal();
+  const alTknOnly=alLeave.filter(x=>x.type==='annual').reduce((a,x)=>a+x.hours,0);
+  document.getElementById('ov-al-bankhrs').textContent=fmins(alBM)||'0h';
+  document.getElementById('ov-al-accrued').textContent=fminsAL(alAcc);
+  document.getElementById('ov-al-taken').textContent=fminsAL(alTknOnly);
+  const ciEl=document.getElementById('ov-al-cashin');if(ciEl)ciEl.textContent=fminsAL(alCashHrs);
+  const cpEl=document.getElementById('ov-al-cashpay');if(cpEl)cpEl.innerHTML='~'+gbp(alCashPay);
+  document.getElementById('ov-al-bal').textContent=fminsAL(alBal);
+  const tod2=new Date();tod2.setHours(0,0,0,0);const tmr=new Date(tod2);tmr.setDate(tod2.getDate()+1);
+  const tev=up.filter(e=>{const d=new Date(e.dt);return d>=tod2&&d<tmr;});
+  const ac=todos.filter(t=>!t.done);
+  let h='';
+  if(tev.length)h+='<div class="glbl">Today\'s events</div>'+tev.map(e=>evC(e,false)).join('');
+  if(ac.length)h+='<div class="glbl">Active tasks</div>'+ac.slice(0,5).map(t=>'<div class="tcard"><div class="cbox" onclick="togTodo('+t.id+');renderOv()"></div><div class="tbody"><div class="ttitle">'+esc(t.text)+'</div><div class="tmeta"><span class="bdg '+t.cat+'">'+t.cat+'</span></div></div><div class="tact"><button class="wabtn" onclick="opWT('+t.id+')">'+waI()+' WA</button></div></div>').join('');
+  if(!h)h='<div class="empty"><span class="emptyicon">&#11088;</span>All clear, Anand!</div>';
+  document.getElementById('ov-body').innerHTML=h;
+  applySalaryState();
+}
+
+document.getElementById('todo-in').addEventListener('keydown',e=>{if(e.key==='Enter')addTodo();});
+document.getElementById('sch-in').addEventListener('keydown',e=>{if(e.key==='Enter')addEvent();});
+// Auto-set day type from date picker
+const bdateEl=document.getElementById('bank-date');
+if(bdateEl)bdateEl.addEventListener('change',function(){
+  const d=new Date(this.value+'T00:00:00'),day=d.getDay();
+  const dtSel=document.getElementById('bank-daytype');
+  if(dtSel){if(day===0)dtSel.value='sunday';else if(day===6)dtSel.value='saturday';else dtSel.value='weekday';}
+});
+// Watermark - visible signature
+const wm=document.createElement('div');
+wm.innerHTML='&#9749; Created by <strong>Anand</strong>';
+wm.style.cssText='text-align:center;padding:1rem 0 0.5rem;font-size:12px;color:#a09d98;font-family:\'DM Sans\',sans-serif;letter-spacing:0.04em;font-style:italic;';
+document.querySelector('.content').appendChild(wm);
+
+// ── EXPORT: CSV ──
+function exportCSV(){
+  if(!bank.length){alert('No bank sessions to export yet.');return;}
+  const DS2=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  const header=['Date','Day','Day Type','From','To','Total Hours','Normal Mins','Night/Sat Mins','Sun/BH Mins','Normal Pay','Night/Sat Pay','Sun/BH Pay','Gross Pay','Tax (est)','NI (est)','Take-home (est)','Notes'];
+  const rows=bank.slice().sort((a,b)=>a.date.localeCompare(b.date)).map(x=>{
+    const d=new Date(x.date+'T00:00:00');
+    const nsM=x.nsatMins!==undefined?x.nsatMins:(x.um||0),sbM=x.sunBHMins||0;
+    const np=x.np||0,nsp=x.nsp||(x.up||0),sbp=x.sbp||0,g=x.g||0;
+    const{tax,ni,net}=calcTax(g);
+    const dtype={weekday:'Weekday',saturday:'Saturday',sunday:'Sunday',bankholiday:'Bank Holiday'}[x.dayType||'weekday'];
+    return[x.date,DS2[d.getDay()],dtype,x.from,x.to,(x.tm/60).toFixed(2),x.nm||0,nsM,sbM,np.toFixed(2),nsp.toFixed(2),sbp.toFixed(2),g.toFixed(2),tax.toFixed(2),ni.toFixed(2),net.toFixed(2),x.note||''];
+  });
+  const csv=[header,...rows].map(r=>r.map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(',')).join('\n');
+  const blob=new Blob([csv],{type:'text/csv;charset=utf-8;'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');a.href=url;a.download='bank-work-sessions-'+tod()+'.csv';
+  document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(url);
+}
+
+// ── EXPORT: PDF ──
+function populatePDFMonthSelector(){
+  const sel=document.getElementById('pdf-month-sel');if(!sel)return;
+  const months={};
+  bank.forEach(x=>{const k=x.date.slice(0,7);months[k]=true;});
+  const cm=tod().slice(0,7);months[cm]=true;
+  const keys=Object.keys(months).sort((a,b)=>b.localeCompare(a));
+  sel.innerHTML=keys.map(k=>{const d=new Date(k+'-01');return'<option value="'+k+'">'+MONTHS[d.getMonth()]+' '+d.getFullYear()+'</option>';}).join('');
+}
+function exportPDF(){
+  if(typeof window.jspdf==='undefined'&&typeof window.jsPDF==='undefined'){
+    alert('PDF library not loaded yet.\n\nMake sure you have an internet connection and try again.');
+    return;
+  }
+  try{
+    const JSPDF=window.jspdf?window.jspdf.jsPDF:window.jsPDF;
+    const sel=document.getElementById('pdf-month-sel');
+    const monthKey=sel?sel.value:tod().slice(0,7);
+    const d0=new Date(monthKey+'-01');
+    const monthName=MONTHS[d0.getMonth()]+' '+d0.getFullYear();
+    const sessions=bank.filter(x=>x.date.slice(0,7)===monthKey).slice().sort((a,b)=>a.date.localeCompare(b.date));
+    const alMonth=alLeave.filter(x=>x.date.slice(0,7)===monthKey);
+    const wnsM=sessions.reduce((a,x)=>a+(x.nsatMins!==undefined?x.nsatMins:(x.um||0)),0);
+    const wsbM=sessions.reduce((a,x)=>a+(x.sunBHMins||0),0);
+    const wtm=sessions.reduce((a,x)=>a+x.tm,0);
+    const wnp=sessions.reduce((a,x)=>a+(x.np||0),0);
+    const wnsp=sessions.reduce((a,x)=>a+(x.nsp||(x.up||0)),0);
+    const wsbp=sessions.reduce((a,x)=>a+(x.sbp||0),0);
+    const wg=sessions.reduce((a,x)=>a+x.g,0);
+    const{tax,ni,net}=calcTax(wg);
+    const alElig=sessions.filter(x=>x.date>=AL_START).reduce((a,x)=>a+x.tm,0);
+    const alEarned=alElig*(AL_RATE/60);
+    const doc=new JSPDF({orientation:'portrait',unit:'mm',format:'a4'});
+    const PL=15,PR=195,PW=180;let y=15;
+    const sc=(r,g2,b)=>doc.setTextColor(r,g2,b);
+    const t=(s,x,ty,sz,bold,r,g2,b)=>{doc.setFontSize(sz||10);doc.setFont('helvetica',bold?'bold':'normal');sc(r!==undefined?r:40,g2!==undefined?g2:40,b!==undefined?b:40);doc.text(String(s),x,ty);};
+    const tr=(s,x,ty,sz,bold,r,g2,b)=>{doc.setFontSize(sz||10);doc.setFont('helvetica',bold?'bold':'normal');sc(r!==undefined?r:40,g2!==undefined?g2:40,b!==undefined?b:40);doc.text(String(s),x,ty,{align:'right'});};
+    const fr=(x,ry,w,h,r,g2,b)=>{doc.setFillColor(r,g2,b);doc.rect(x,ry,w,h,'F');};
+    const hl=(ly)=>{doc.setDrawColor(200,210,235);doc.line(PL,ly,PR,ly);};
+    // Header
+    fr(0,0,210,28,237,242,255);
+    t("Anand's Planner \u2014 Bank Work",PL,10,15,true,26,79,168);
+    t(monthName,PL,17,11,false,70,70,70);
+    t('NHS Band 2 \u00b7 \u00a3'+NR.toFixed(2)+'/hr',PL,23,9,false,120,120,120);
+    tr('Generated: '+new Date().toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'}),PR,10,8,false,120,120,120);
+    tr('Approx only \u2014 pension not included',PR,15,7,false,160,160,160);
+    hl(29);y=36;
+    // Summary boxes
+    const bw=(PW-9)/4,bh=16;
+    [[String(sessions.length),'Sessions'],[(wtm/60).toFixed(1)+'h','Total Hours'],['\u00a3'+wg.toFixed(2),'Gross Pay'],['\u00a3'+net.toFixed(2),'Take-home']].forEach((b,i)=>{
+      const bx=PL+i*(bw+3);fr(bx,y,bw,bh,220,232,255);doc.setDrawColor(180,200,240);doc.rect(bx,y,bw,bh,'S');
+      t(b[1],bx+bw/2,y+5,7,false,100,100,120);doc.setFontSize(10);doc.setFont('helvetica','bold');sc(26,79,168);doc.text(b[0],bx+bw/2,y+12,{align:'center'});
+    });y+=bh+7;
+    // Pay breakdown
+    t('PAY BREAKDOWN',PL,y+4,9,true,26,79,168);y+=7;hl(y);y+=2;
+    const rows=[['Normal hours (6am\u20138pm)',fmins(sessions.reduce((a,x)=>a+(x.nm||0),0)),'\u00a3'+wnp.toFixed(2),40,40,40],['Night / Saturday (+41%)',fmins(wnsM),'\u00a3'+wnsp.toFixed(2),180,80,30]];
+    if(wsbM>0)rows.push(['Sunday / Bank Holiday (+83%)',fmins(wsbM),'\u00a3'+wsbp.toFixed(2),150,90,10]);
+    rows.push(['Gross pay',fmins(wtm),'\u00a3'+wg.toFixed(2),40,40,40]);
+    if(tax>0)rows.push(['Income tax (20%)','',' \u2013\u00a3'+tax.toFixed(2),180,30,30]);
+    if(ni>0)rows.push(['National Insurance (8%)','',' \u2013\u00a3'+ni.toFixed(2),180,30,30]);
+    rows.forEach((r,i)=>{
+      if(i%2===0)fr(PL,y,PW,5.5,248,250,255);
+      t(r[0],PL+2,y+4,9,false,r[3],r[4],r[5]);if(r[1])t(r[1],PL+105,y+4,9,false,100,100,100);tr(r[2],PR-2,y+4,9,false,r[3],r[4],r[5]);y+=5.5;
+    });
+    fr(PL,y,PW,7,210,228,255);doc.setDrawColor(26,79,168);doc.rect(PL,y,PW,7,'S');
+    t('Approx take-home',PL+2,y+5,10,true,26,79,168);tr('\u00a3'+net.toFixed(2),PR-2,y+5,11,true,26,79,168);y+=11;
+    // A/L
+    if(alEarned>0||alMonth.length>0){
+      t('ANNUAL LEAVE',PL,y+4,9,true,26,120,60);y+=7;hl(y);y+=2;
+      const alTkn=alMonth.filter(x=>x.type==='annual').reduce((a,x)=>a+x.hours,0);
+      const alCi=alMonth.filter(x=>x.type==='cashin').reduce((a,x)=>a+x.hours,0);
+      const alCiP=alMonth.filter(x=>x.type==='cashin').reduce((a,x)=>a+(x.cashPay||0),0);
+      const ar=[['A/L accrued (12.07%)',fminsAL(alEarned)]];
+      if(alTkn>0)ar.push(['A/L taken',fminsAL(alTkn)]);
+      if(alCi>0)ar.push(['A/L cashed in (\u00a3'+alCiP.toFixed(2)+')',fminsAL(alCi)]);
+      ar.forEach((r,i)=>{if(i%2===0)fr(PL,y,PW,5.5,238,255,245);t(r[0],PL+2,y+4,9,false,30,100,60);tr(r[1],PR-2,y+4,9,false,30,100,60);y+=5.5;});y+=3;
+    }
+    // Session log
+    if(sessions.length>0){
+      t('SESSION LOG',PL,y+4,9,true,26,79,168);y+=7;
+      fr(PL,y,PW,6,26,79,168);
+      const cols=[PL+2,PL+28,PL+52,PL+70,PL+100,PL+122,PL+146,PR-2];
+      ['Date','Day','Type','From-To','Hrs','Gross','Take-home'].forEach((h,i)=>{doc.setFontSize(7.5);doc.setFont('helvetica','bold');sc(255,255,255);i===6?doc.text(h,cols[i+1],y+4,{align:'right'}):doc.text(h,cols[i],y+4);});
+      y+=6;
+      const DS2=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+      sessions.forEach((x,i)=>{
+        if(y>272){doc.addPage();y=15;}
+        if(i%2===0)fr(PL,y,PW,5.5,248,250,255);
+        const d=new Date(x.date+'T00:00:00'),g=x.g||0,{net:sn}=calcTax(g);
+        const dtype={weekday:'Wkday',saturday:'Sat',sunday:'Sun',bankholiday:'BH'}[x.dayType||'weekday']||'Wkday';
+        const isSun=x.dayType==='sunday'||x.dayType==='bankholiday',isSat=x.dayType==='saturday';
+        doc.setFontSize(8);doc.setFont('helvetica','normal');sc(isSun?150:isSat?180:40,isSun?90:isSat?80:40,isSun?10:isSat?30:40);
+        doc.text(x.date,cols[0],y+4);doc.text(DS2[d.getDay()],cols[1],y+4);doc.text(dtype,cols[2],y+4);
+        doc.text((x.from||'')+'-'+(x.to||''),cols[3],y+4);doc.text((x.tm/60).toFixed(1)+'h',cols[4],y+4);doc.text('\u00a3'+g.toFixed(2),cols[5],y+4);
+        sc(26,79,168);doc.text('\u00a3'+sn.toFixed(2),cols[7],y+4,{align:'right'});y+=5.5;
+      });
+      fr(PL,y,PW,6.5,200,215,245);doc.setDrawColor(160,185,230);doc.rect(PL,y,PW,6.5,'S');
+      doc.setFontSize(8.5);doc.setFont('helvetica','bold');sc(26,79,168);
+      doc.text('TOTAL ('+sessions.length+' session'+(sessions.length!==1?'s':'')+')',cols[0],y+4.5);
+      doc.text((wtm/60).toFixed(1)+'h',cols[4],y+4.5);doc.text('\u00a3'+wg.toFixed(2),cols[5],y+4.5);doc.text('\u00a3'+net.toFixed(2),cols[7],y+4.5,{align:'right'});y+=9;
+    } else {
+      t('No bank sessions logged for '+monthName+'.',PL+2,y+6,10,false,120,120,120);y+=12;
+    }
+    // Footer
+    doc.setDrawColor(200,200,200);doc.line(PL,283,PR,283);
+    doc.setFontSize(7);doc.setFont('helvetica','normal');sc(150,150,150);
+    doc.text("Anand's Planner",PL,287);
+    doc.text('Figures are approximate. Pension not included. Verify with your payslip.',PR,287,{align:'right'});
+    doc.save('bank-work-'+monthKey+'.pdf');
+  }catch(err){
+    console.error('PDF error:',err);
+    alert('PDF generation failed.\n\nError: '+err.message+'\n\nTry the CSV export instead.');
+  }
+}
+
+
+// ── AI QUICK LOG (local parser — instant, no internet needed) ──
+function parseShift(input,today){
+  let s=input.toLowerCase().trim();
+  s=s.replace(/(\d)\.(\d{2})\s*(am|pm)/g,'$1:$2$3');
+  s=s.replace(/(\d{2})\.(\d{2})/g,'$1:$2');
+  s=s.replace(/\bmidnight\b/g,'00:00am');
+  s=s.replace(/\b(noon|midday)\b/g,'12:00pm');
+  s=s.replace(/\bhalf\s*past\s*(\d{1,2})\b/g,'$1:30');
+  s=s.replace(/\bhalf\s+(\d{1,2})\b/g,'$1:30');
+  s=s.replace(/\bquarter\s*(?:past|after)\s*(\d{1,2})\b/g,(m,h)=>h+':15');
+  s=s.replace(/\bquarter\s*to\s*(\d{1,2})\b/g,(m,h)=>String(parseInt(h)-1)+':45');
+  function pt(token){
+    token=token.trim();
+    let m=token.match(/^(\d{1,2}):(\d{2})\s*(am|pm)?$/);
+    if(m){let h=parseInt(m[1]),mi=parseInt(m[2]),ap=m[3];if(ap==='pm'&&h<12)h+=12;if(ap==='am'&&h===12)h=0;return String(h).padStart(2,'0')+':'+String(mi).padStart(2,'0');}
+    m=token.match(/^(\d{1,2})\s*(am|pm)$/);
+    if(m){let h=parseInt(m[1]),ap=m[2];if(ap==='pm'&&h<12)h+=12;if(ap==='am'&&h===12)h=0;return String(h).padStart(2,'0')+':00';}
+    return null;
+  }
+  const timeRe=/\b\d{1,2}:\d{2}\s*(?:am|pm)?\b|\b\d{1,2}\s*(?:am|pm)\b/g;
+  const matches=[...s.matchAll(timeRe)].map(m=>m[0].trim());
+  if(matches.length<2)return null;
+  const from=pt(matches[0]),to=pt(matches[1]);
+  if(!from||!to)return null;
+  const todayD=new Date(today+'T12:00:00');
+  let date=today;
+  if(s.match(/\btomorrow\b/)){const d=new Date(todayD);d.setDate(d.getDate()+1);date=d.toISOString().slice(0,10);}
+  else if(s.match(/\byesterday\b/)){const d=new Date(todayD);d.setDate(d.getDate()-1);date=d.toISOString().slice(0,10);}
+  else if(s.match(/\blast\s+(monday|tuesday|wednesday|thursday|friday|saturday|sunday)\b/)){
+    const dns=['sunday','monday','tuesday','wednesday','thursday','friday','saturday'];
+    const m=s.match(/last\s+(monday|tuesday|wednesday|thursday|friday|saturday|sunday)/);
+    const d=new Date(todayD);let diff=d.getDay()-dns.indexOf(m[1]);if(diff<=0)diff+=7;d.setDate(d.getDate()-diff);date=d.toISOString().slice(0,10);
+  }else if(!s.match(/\btoday\b/)){
+    const dns=['sunday','monday','tuesday','wednesday','thursday','friday','saturday'];
+    for(let i=0;i<dns.length;i++){if(new RegExp('\\b'+dns[i]+'\\b').test(s)){const d=new Date(todayD);let diff=d.getDay()-i;if(diff<0)diff+=7;if(diff===0)diff=7;d.setDate(d.getDate()-diff);date=d.toISOString().slice(0,10);break;}}
+  }
+  let dayType;
+  if(s.match(/\bbank\s*hol/))dayType='bankholiday';
+  else if(s.match(/\bsunday\b/))dayType='sunday';
+  else if(s.match(/\bsaturday\b/))dayType='saturday';
+  else{const d=new Date(date+'T00:00:00'),dy=d.getDay();dayType=dy===0?'sunday':dy===6?'saturday':'weekday';}
+  const noteM=s.match(/(?:note|notes?)[:\s]+(.+)$/);
+  return{date,from,to,dayType,note:noteM?noteM[1]:''};
+}
+
+// ── QUICK LOG ──
+let _qlDate=null;
+function qlInit(){
+  const hours=Array.from({length:24},(_,i)=>String(i).padStart(2,'0'));
+  const mins=['00','05','10','15','20','25','30','35','40','45','50','55'];
+  ['ql-fh','ql-th'].forEach(id=>{const s=document.getElementById(id);if(s&&!s.options.length)s.innerHTML=hours.map(h=>'<option value="'+h+'">'+h+'</option>').join('');});
+  ['ql-fm','ql-tm'].forEach(id=>{const s=document.getElementById(id);if(s&&!s.options.length)s.innerHTML=mins.map(m=>'<option value="'+m+'">'+m+'</option>').join('');});
+  const fh=document.getElementById('ql-fh');if(fh)fh.value='07';
+  const fm=document.getElementById('ql-fm');if(fm)fm.value='30';
+  const th=document.getElementById('ql-th');if(th)th.value='15';
+  const tm=document.getElementById('ql-tm');if(tm)tm.value='30';
+  qlSetDate(0);
+}
+function qlSetDate(offset){
+  const d=new Date();d.setHours(12,0,0,0);
+  if(offset!==0)d.setDate(d.getDate()+offset);
+  _qlDate=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+  document.getElementById('ql-date').value=_qlDate;
+  ['ql-today','ql-yesterday','ql-tomorrow'].forEach(id=>{
+    const btn=document.getElementById(id);
+    if(btn){btn.style.background='transparent';btn.style.borderColor='rgba(255,255,255,.2)';}
+  });
+  const btnId=offset===0?'ql-today':offset===-1?'ql-yesterday':'ql-tomorrow';
+  const btn=document.getElementById(btnId);
+  if(btn){btn.style.background='rgba(255,255,255,.25)';btn.style.borderColor='rgba(255,255,255,.7)';}
+}
+function qlDatePicked(){
+  _qlDate=document.getElementById('ql-date').value;
+  ['ql-today','ql-yesterday','ql-tomorrow'].forEach(id=>{
+    const btn=document.getElementById(id);
+    if(btn){btn.style.background='transparent';btn.style.borderColor='rgba(255,255,255,.2)';}
+  });
+}
+function qlPreset(from,to){
+  document.getElementById('ql-from').value=from;
+  document.getElementById('ql-to').value=to;
+  document.getElementById('ql-status').textContent='';
+}
+function qlLog(){
+  const status=document.getElementById('ql-status');
+  const fh=document.getElementById('ql-fh').value,fm=document.getElementById('ql-fm').value;
+  const th=document.getElementById('ql-th').value,tm=document.getElementById('ql-tm').value;
+  const from=fh+':'+fm,to=th+':'+tm;
+  const date=_qlDate||tod();
+  const qlDT=document.getElementById('ql-daytype').value;
+  let dayType;
+  if(qlDT==='auto'){const d=new Date(date+'T00:00:00'),dy=d.getDay();dayType=dy===0?'sunday':dy===6?'saturday':'weekday';}
+  else{dayType=qlDT;}
+  const note=document.getElementById('ql-note').value.trim();
+  document.getElementById('bank-date').value=date;
+  document.getElementById('bank-from').value=from;
+  document.getElementById('bank-to').value=to;
+  document.getElementById('bank-daytype').value=dayType;
+  document.getElementById('bank-note').value=note;
+  addBankEntry();
+  document.getElementById('ql-note').value='';
+  document.getElementById('ql-daytype').value='auto';
+  const d=new Date(date+'T00:00:00');
+  const DS=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  const MS2=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  status.textContent='\u2705 Logged: '+DS[d.getDay()]+' '+d.getDate()+' '+MS2[d.getMonth()]+' \u00b7 '+from+'\u2013'+to+' \u00b7 '+dayType;
+}
+
+function aiLog(){
+  const input=document.getElementById('ai-log-input').value.trim();
+  const status=document.getElementById('ai-log-status');
+  if(!input){status.textContent='Please type something first.';return;}
+  const today=tod();
+  const result=parseShift(input,today);
+  if(!result){
+    status.textContent='\u274c Try formats like: "1am to 3am" or "9:00 to 17:00" or "7:30am to 3:30pm today"';
+    return;
+  }
+  document.getElementById('bank-date').value=result.date;
+  document.getElementById('bank-from').value=result.from;
+  document.getElementById('bank-to').value=result.to;
+  document.getElementById('bank-daytype').value=result.dayType;
+  if(result.note)document.getElementById('bank-note').value=result.note;
+  const d=new Date(result.date+'T00:00:00');
+  const DS2=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  const MS2=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  status.textContent='\u2705 '+DS2[d.getDay()]+' '+d.getDate()+' '+MS2[d.getMonth()]+' \u00b7 '+result.from+'\u2013'+result.to+' \u00b7 '+result.dayType+' \u2014 check below then tap Add Session';
+  document.getElementById('ai-log-input').value='';
+  document.getElementById('bank-date').scrollIntoView({behavior:'smooth',block:'center'});
+}
+
+
+// ── JSON BACKUP ──
+function exportJSON(){
+  if(!bank.length&&!alLeave.length){alert('No data to backup yet.');return;}
+  const data={version:1,exportedAt:new Date().toISOString(),app:'BankWorkTracker',profile:{name:localStorage.getItem('a_name')||'Anand',customRate:customRate},bank:bank,alLeave:alLeave};
+  const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');a.href=url;a.download='bank-tracker-backup-'+tod()+'.json';
+  document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(url);
+  const s=document.getElementById('import-status');
+  if(s){s.style.display='block';s.style.color='#1a7a45';s.textContent='\u2705 Backup saved! Keep this file safe.';}
+}
+function importJSON(evt){
+  const file=evt.target.files[0];if(!file)return;
+  const s=document.getElementById('import-status');
+  const reader=new FileReader();
+  reader.onload=function(e){
+    try{
+      const data=JSON.parse(e.target.result);
+      if(!data.app||data.app!=='BankWorkTracker')throw new Error('This does not look like a Bank Work Tracker backup file.');
+      if(!Array.isArray(data.bank))throw new Error('Backup file appears to be corrupted.');
+      const existingIds=new Set(bank.map(x=>x.id));
+      const existingAlIds=new Set(alLeave.map(x=>x.id));
+      let ns=0,na=0;
+      data.bank.forEach(x=>{if(!existingIds.has(x.id)){bank.push(x);ns++;}});
+      if(data.alLeave)data.alLeave.forEach(x=>{if(!existingAlIds.has(x.id)){alLeave.push(x);na++;}});
+      if(data.profile&&data.profile.customRate){customRate=data.profile.customRate;applyCustomRate();}
+      save();renderBank();renderAL();renderPW();
+      const msg=ns===0&&na===0?'\u2705 Already up to date \u2014 nothing duplicated.':'\u2705 Imported '+ns+' session'+(ns!==1?'s':'')+' and '+na+' A/L entr'+(na!==1?'ies':'y')+'.';
+      if(s){s.style.display='block';s.style.color='#1a7a45';s.textContent=msg;}
+    }catch(err){
+      if(s){s.style.display='block';s.style.color='red';s.textContent='\u274c Import failed: '+err.message;}
+    }
+    evt.target.value='';
+  };
+  reader.readAsText(file);
+}
+
+// ── PWA MANIFEST ──
+(function(){
+  const icon192='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAE+klEQVR42u3dv2tdZRjA8eecpEGURmJpTFohESRdHATddHDTQVoRi4Od23/AXVQUB0cXcXJQqYttEESlKE4uCtVMgrZ30KSiUhMxMaLXqaGJ1Nybe+457znv57OF/sjJ5fme5z3XNBbRsMMLJ/tBtjZ6y0WTn78w8OQcRGHoyTmGwuCTcwiFwSfnEAqDT84hFAafnEMoDT9tVcXslYafnCMoDD45H4lKw0/O26A0/OQcQWn4yTmC0vCTcwSll4qclVWVBG3cAqXhJ+cISsNPzhF4BsAzgLs/uW6BSS8NVZn7YG7f37P2xFpS11y4+zPOgU8tiL3fL2QD0Mjg7/27mtoMhbs/TQx+kxvh5i3gXSCSGf46P89/NoC7PykMZF3b4MYWsAFIcvjr+vwCIMnhr+s6SscfUh3+cV7PjZm3AUh6+Md9XQIgawIg+bv/OK+vcP6nDcN/syrfHrUBcATC3T/X6/XNcFTuxG33xJm7Ho2H7rgv5g7NxGQxEdf+uh5X/rwWH65/GR//9lX8/s9WEtfqGcDdv9K/7/TMw/HisTMxUdz6cPHWL5fi5dX3kngWcASiMotTs/HCsWf/d/hT4whEZZ6eeSQmi4mdj/vRj9fW3o8L17+Irf52LEzNxuPTD8ZWf1sAdM8Dt9+76+NL61/Hmz9/tPPxymYvVjZ7SV2zI5Dzf2WOTt656+PLm98nf/0CoDJT5e4DxfrffyR/zQIga94GdQQaycLUbHyy9NJAv/fy5pU4/d2rlX4No74VagOQNQGQNW+DMpLe9k+xtHIuIiI+PfFKHD90ZOfXnv/x7Xj3189tABAACICUpPaDapu4fm+DZm7Ut0Kfu/upOHv0saH+zGcb38TZ3utJBGAD4AgEuXIEonX/JLLK5xcbAEcg8ta2d4P8WBQQADlugaqvUwC0JoJxXF+S3wy3fvXiqnFsxtLKufmcvt5k3gY19CJoYjuVhp+9vr3/jdUchj+JAAy/CJp8LikNP6lGUMdDeWPPAIbfc0GTg9/oBjD8tkEKw9/IBjD8tsF+gU0vnqpt2/hH8Rx4WKsIoennDAFQ2fAOEkRqb7HWegRy/GFQdR2DfC8QWRMAAgABgABAACAAEAB0XK3/Jfj4k+fnveTYACAAEAAIAAQAAgABgABAACAAEAAIAAQAAgABgABAACAAEAAIAAQAA6j1p0L8cOEZPx6dgUwvvuPHo4MAQAAgABAACAAEAAIAAYAAQAAgABAACAAEAAIAAYAAQAAgABAAAgABgABAACAAEAAIAAQAAgABgABAACCAoUwvnpr3kpPSnNgA2AAgAMcgMjv+NLYBREAqc1Hm9MVi+JN6BhABTc9BmfMXT97Dn0QAIjD8TSoOL5zsp/bCrF+9uGo8DH22AUBWRyAQAAgABAACAAGAAEAAIAAQAAgABAACAAGAAOAAAWz0lgsvAzna6C0XNgCOQCAAyDUAzwHkeP63AbABvAQIwDGIDI8/NgA2wK3KgK7f/W0AbID9CoGu3v1tAGyAQUuBrt39bQBsgGGLga7c/ffdACKgy8M/0BFIBHR1+D0D4BmgqpKgbXf/oTaACOja8A99BBIBXRr+Az0DiICuDH9ExEjD7H+xSlsH/8AbwDagK8M/cgAioM3DP/IRyJGItg7+WAIQAm0Z/LEGIARSH/xaAhACqT9f1v4AKwaaHvpGAxAETQ78Xv8CNdmrojbd4k0AAAAASUVORK5CYII=';
+  const icon512='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAN+ElEQVR42u3dPWxd5RnA8fccXycOqZ0YkWJDUgeB8lGxUdQ2pQNThyJToTQd6FgpAxMjqtQKJhADayN1pajqAhFDt6qVGCp1QFUEUiqFmJQm1G2k2HATG9uXiY+mce699v047/v8fkulNgHf91j3+Z/nXLtVYqSmFxY7TgHg/60una+cwug4bEMeQBwIAAx7AFEgADDwAQSBADD0ARADAsDAB0AQCACDHwAhIAAMfQDEgAAw+AEQAgLA4AdACAgAQx8AMSAADH4AhMBQ1YY/AMSbJZWLBQDxtgHFvBiDHwAhECgADH4AhED/sv4MgOEPgBkUaANg8ANgGxBsA2D4A2A2BQsAwx8AM2owKocKAIOVwyOBxm8ADH8AbAOCBYDhD4AIGI7KoQHAcDXxkUDjNgCGPwC2AcECwPAHQAQECwDDHwARECwADH8ARECwADD8ARABwQLA8AdABAQLAMMfABEwvllYR3vBACACxhAAhj8AjH821qW/QAAQAWMMAMMfAJozK+vSXhAAiIAGBIDhDwDNm5117i8AAERAAzcAAEDzDC0A3P0DQHNnaZ3bFwwAIqCBAWD4A0DzZ6vPAABAQAMNAHf/AJDHFqBu6hcGAAxv1tZN+4IAgOHPXJ8BAICAdh0A7v4BIL8tQD3uLwAAGP0M9ggAAALacQC4+weAfLcANgAAYAPg7h8AImwBWo4OgF7NvT2347977alrDrBBKnf/AAxy0AuD8VhdOt/XTO/rDxv+AAa+ICgjAjwCADD0G/t1iYHh6bkU3P0DGPo2A+VsAWwAAAz+rF6DEBgMAQBg6Gf7usTAzvW0JrD+BzD4m0wI/K9eHgP4TYAAhr/XbQPg7h/AALQNiLAF8BkAAIO/yDMRAndXu/sHMPydT3m6zXCfAQAw3JxTQB4BABhoIc7MI4EeNwDW/wCGv/PL291muUcAAIaXc7QBcPcPYGg5zwhbABsAAMPKuQbkQ4AABlToM4764UAbAADD33kLAM//AaA0d5rtNgAA7kade8BzFwAAhhABz7/utiIAwPBxHfJ3+4y3AQAwdAh4PQQAgGFDwOsiAAAgoC8DwPN/AHeZlH19vj7rbQAADBcCXicBAGCoEPB6CQAACEgAALibJOB1q1PyAUAAiOKLmW8DAOAukoDXTwAAGB4EvI4CAAACEgAA7hoJeD0FAAAE1HIEAOzGt/YcSt/dfzx9e9+R9PDe+TTXOphmW9Npqp5Mk1UrrW2tp/bWerq5tZbaW+upvXUr3dhsp39+9p/04fpyurL+1X/e3FpzoCNS+RFAgOEpdf2/r96Tzsz+MJ2ePZWOTx0eyD/zg7WP04/+8atszuDaU9dsAACI48cHHk+/nD+T7mvNOIyM+QwAgLv/nkxUdXrxgWfTa0d+YfgXcH1tAADoyUsPPJt+OvuEg7ABACCKZ2ZPGf4CAIBuSlr/T0/sSy/MnXZRC7vOAgCAu/r5vU+mAxP7HURhfAYAgLs6PfuDvv/O9Y3V9Pr1P6d3PnkvXV7/d7qx+WnaW02m/fVUun/yYHpk73w6MXU4nfrGyXR86sFUpcpBCwCAvJW0/j8xdTgd2XNfX3/nT6t/T89f+W1q3/ZLfdqdtdTeWkvLGzfShZtLX/73h1oH0jOz30+P3fNIttc7x98JIAAA2Nb39h/v68+/d+tKeu7D36SNzmbPf2d540Y6t/xHhz1iPgMAwLZO7jvS159/+eof+hr+CAAAGuihPff3/Gc/+uy/6a+fXnRoAgAgntJ++983Jw/2/GffbV9KndRx3QUAALk72MeP/11a+9iBCQAASrC3muz5z36yedOBCQAASjBR9T4mbnXWHZgAAAAEAAAgAABKVNpPAFD29RcAAGADAABEUE0vLHYcA8Du5foIYGbinvS3k6+N/N/7nfefTyub7aK+B3L6PwWyAQCAgAQAAAgAAEAAAAACAAAQAABAplqOACC2lc12Onbh7B3/t4uPnuv5n/Prf72e3rj+FwdqAwAACAAAQAAAAAIAABAAAPnJ6ffA4/oLAACwAQAABAAAIAAAAAEAAGSqml5Y7DgGgMGZe3sum6/1UGsmvXPi1cZ8PWcuvZLebV/K7prn+BMgNgAAEJAAAAABAAAIAAD65jcCut4CAAAQAACAAAAolscArnPTtVw+gLiWN1bSsQtnHYQNAAAgAADYMY8BXF8BAAAIAAB3ibiuAgAAEAAAgAAAyJzHAK6nAAAABACAu0ZcRwEAYHjg+gkAAEAAALiLxHUTAACAAABwN4nrJQAADBVcJwEAYLjg+ggAAIhOAAC4yyTgdWm5zM22cvmtq04Bynfswtl5p2D4j1I1vbDYcbkNe0AEEGsjIwAMfUAEkOI9jhEABj8gAgz/gJ/F8BkAgx+AgGwADH7AFsDdvwDA8AeEgMEfgd8DYPgDDXbx0XPeQwx/GwCDH7AJwPC3ATD8AZsADH8BYPgDIgDDv1ceARj+QIY8EjD4bQAMf8A2AMNfABj+gAjA8O/ObwIEKCACPBIw+PvlMwDu/oGCRA4Bg78/HgEY/kCBGwHDHxsAwx+wDSg+eGaOPu0RSJ98BgAgwDagpBjw4UcbAHf/AIG2At0Gvy2ADQAAhWwF3O3bALj7BwiyGdjN0LcFsAEAYBdDd5RB4C7fBsDdP0DBm4JRDXpbABsAANytsw2/CAgABADbsf4H8H4tAAAAAQAACAAAQAAAAAIgQz5QAuB9WwAAAAIAABAAAIAAAAAEAAAgAAAAAQAACAAAQAAAAAIAABAAAIAAAAAEAAAgAABAAAAAAgAAEAAAgAAAAAQAAJClliPo7sGf/H7eKQBgAwAACAAAQAAAAAIAABAAAIAAAAAEAAAgAAAAAQAACAAAQAAAAAIAABAAAIAAAAABAAAIAABAAAAAAgAAEAAAgAAAAAQAACAAAAABAAAIAABAAAAAAgAAEAAAgAAAAAQAACAAAAABAAACAAAQAACAAAAABAAAIAAAAAEAAAgAAEAAAAACAAAQAACAAAAABAAAIAAAAAEAAAgAAEAAAAACAAAQAAAgAAAAAQAACAAAQAAAAAIAABAAAIAAAACao+UIuvvozZ9ddQoAeZk5+rt5p2ADAAAIAAAQAACAAAAABAAAIAAAAAEAAAgAAEAAAAACAAAQAACAAAAABAAAIAAAAAEAAAgAAEAAAAACAAAQAAAgABwBAAgAAEAAAAACAAAQAACAAAAABAAAIAAAAAEAAAgAAEAAAAACAAAQAACAAAAABAAAIAAAAAEAAAgAABAAAIAAAAAEAAAgAAAAAQAACAAAQAAAAAIAABAAAIAAAAAEAAAgAAAAAQAACAAAQAAAAAIAABAAACAAAAABAAAIAABAAAAAAgAAEAAAgAAAAAQAACAAAAABAAAIAABAAAAAAgAAEAAAgAAAAAQAACAAAEAAAAACAAAQAACAAAAABAAAIAAAAAEAAAgAAEAAAAACAAAQAACAAAAABAAAIAAAAAEAAAiAXZk5+vS8UwDwvi0AAAABAAAIAABAAAAAAiBTPlAC4P1aAAAAAgAAEADFslYC8D4tAAAAAaAuAfD+LAAAAAGgMgHwviwAAAABoDYB8H4sAHzTAeB9WAD45gPA+68AAAAEgAoF8L6LAPDNCOD9FgHgmxLA+ywCwDcngPdXBIBvUgDvq1FV0wuLHccwPCuX37rqFAAMfhsA37wAeP8UAL6JAfC+OXoeAYyYRwIABr8AEAIAGPwCQAgAGPwIADEAYOgjAEQBgGGPAAAAdsyPAQKAAAAABAAAIAAAAAEAAAgAAEAAAAACAAAQAACAAAAABAAAIAAAAAEAAAgAAEAAAAACAAAQAACAAAAAAQAACAAAQAAAAAIAABAAAIAAAAAEAAAgAAAAAQAACAAAQAAAAAIAABAAAIAAAAAEAAAgAAAAAQAAcQNgdel85RgAII7VpfOVDQAARNwAOAIAEAAAgAAAAAQAACAAAICMA8CPAgJADF/MfBsAAIi6AQAABAAAIAAAgGIDwAcBAaBsX5/1NgAAEHkDAAAIAAAgSgD4HAAAlOn2GW8DAADRNwAAQNAA8BgAAMpyp9luAwAANgAAgAAAAOIEgM8BAEAZtpvpNgAAYANgCwAApd/92wAAgA0AACAAkscAAJCrbjPcBgAAbABsAQCg9Lt/GwAAsAGwBQCACHf/NgAAYAMAAAiA23gMAADN1s+stgEAABsAWwAAKP3uf0cbABEAAHkP/x0FAACQvx0FgC0AAOR7928DAAA2ALYAABDh7t8GAABsAGwBACDC3f9ANgAiAADyGv4DCQAAID8DCQBbAADI5+5/oBsAEQAAeQz/gQaACACAPIb/wAMAAMjDwAPAFgAAmj9b61y+UAAw/BseACIAAJo9S30GAAACGmoA2AIAQDNnaJ37CwAAw7+BASACAKB5M7Mu7QUBgOHfoAAQAQDQnBlZl/4CAcDwb0AAiAAAGP9MrKO9YACIPvzHGgAiAADDf3zq6AcAABFnX+0gACDezKsdCADEm3W1gwGAeDOudkAAEG+2NXrYTi8sdnzbAGDwB9gA2AYAYPgHDwARAIDhPxxZDVePBAAw+INsAGwDADCjggeACADAbBqMrIepRwIAGPxBNgC2AQCYQcE3ALYBABj8wQNACABg8AcOACEAgMHfXe2CAUC8WRJiSNoGAGDwBwwAMQCAoR88AIQAAJEHf/gAEAIABn/k1++DcmIAwNAXAAgBAINfACAIAAx8AYAYADD0BQCCAMDAFwCIAgDDXgAgDgAM+cb6HBMiJG58F+WHAAAAAElFTkSuQmCC';
+  const manifest={name:"Anand's Planner",short_name:'Bank Tracker',description:'NHS Bank Work Tracker',start_url:'.',display:'standalone',background_color:'#0d1f4e',theme_color:'#0d1f4e',orientation:'portrait',icons:[{src:icon192,sizes:'192x192',type:'image/png'},{src:icon512,sizes:'512x512',type:'image/png'}]};
+  const blob=new Blob([JSON.stringify(manifest)],{type:'application/json'});
+  const url=URL.createObjectURL(blob);
+  const el=document.getElementById('pwa-manifest');if(el)el.href=url;
+})();
+
+// ── SERVICE WORKER (minimal — enables PWA install prompt) ──
+(function(){
+  try{
+    if('serviceWorker' in navigator){
+      // Minimal SW as data URI — works on both local files and HTTPS hosting
+      const sw='self.addEventListener("install",e=>{self.skipWaiting();});self.addEventListener("activate",e=>{e.waitUntil(clients.claim());});';
+      const blob=new Blob([sw],{type:'text/javascript'});
+      const url=URL.createObjectURL(blob);
+      navigator.serviceWorker.register(url).catch(function(){});
+    }
+  }catch(e){}
+  let dp=null;
+  window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();dp=e;const b=document.getElementById('install-app-btn');if(b)b.style.display='flex';const c=document.getElementById('install-prompt-card');if(c)c.style.display='block';});
+  window.addEventListener('appinstalled',()=>{const b=document.getElementById('install-app-btn');if(b)b.style.display='none';const c=document.getElementById('install-prompt-card');if(c)c.style.display='none';dp=null;});
+  window.triggerInstall=function(){if(dp){dp.prompt();dp.userChoice.then(()=>{dp=null;});}};
+})();
+load();renderTodos();renderEvents();renderCal();renderBank();renderAL();initHdr();qlInit();
+</script>
+</body>
+</html>
